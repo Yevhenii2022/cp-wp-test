@@ -38,12 +38,12 @@ body {
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color: $grey30;
+		background-color: $grey15;
 		border-radius: 8px;
 	}
 
 	&::-webkit-scrollbar-thumb:hover {
-		background-color: $main-violet;
+		background-color: $grey40;
 	}
 }
 
@@ -168,13 +168,13 @@ input,
 select,
 optgroup,
 textarea {
-	color: $main-black;
-	font-family: "Raleway", sans-serif;
+	color: $grey70;
+	font-family: "GraphikLCG", sans-serif;
 	font-variant-numeric: lining-nums proportional-nums;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 1.5;
+	line-height: calc(19 / 16);
 }
 
 img {

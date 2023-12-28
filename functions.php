@@ -45,12 +45,14 @@ function cp_wp_test_scripts()
   }
 }
 /** add fonts */
-function add_google_fonts()
+function add_custom_fonts()
 {
-  wp_enqueue_style('google_web_fonts', 'https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+  wp_enqueue_style('graphik_lcg_regular', get_template_directory_uri() . '/src/fonts/GraphikLCG-Regular.woff', array(), null);
+  wp_enqueue_style('graphik_lcg_medium', get_template_directory_uri() . '/src/fonts/GraphikLCG-Medium.woff', array(), null);
 }
 
-add_action('wp_enqueue_scripts', 'add_google_fonts');
+add_action('wp_enqueue_scripts', 'add_custom_fonts');
+
 
 /** Register menus */
 function cp_wp_test_menus()
