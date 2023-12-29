@@ -1,3 +1,54 @@
-.home {
-	color: red;
+@import "../variables.scss";
+
+.banner {
+	height: 46.5rem;
+	background-color: #d9d9d9;
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (max-width: $big-tablet) {
+		height: 41.875rem;
+	}
+}
+
+.banner-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 2rem;
+	height: 100%;
+
+	@media screen and (max-width: $big-tablet) {
+		flex-direction: column;
+		gap: 1rem;
+		align-items: flex-start;
+	}
+}
+
+.banner__title {
+	width: 52.875rem;
+	color: $main-white;
+	font-size: 4.5rem;
+	font-weight: 600;
+	line-height: 1;
+	margin-top: auto;
+
+	@media screen and (max-width: 1140px) {
+		width: 44.375rem;
+		font-size: 3.75rem;
+	}
+
+	@media screen and (max-width: $desktop) {
+		width: 27.5rem;
+		font-size: 2.875rem;
+	}
+
+	@media screen and (max-width: $tablet) {
+		width: 21.5rem;
+		font-size: 2.25rem;
+	}
+
+	@media screen and (max-width: $mobile) {
+		width: 100%;
+	}
 }

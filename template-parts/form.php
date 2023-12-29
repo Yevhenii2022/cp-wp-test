@@ -1,10 +1,3 @@
-    <button class="button">
-      Надіслати
-      <svg class="arrow-icon stroke">
-        <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
-      </svg>
-    </button>
-
     <section>
       <h2 class="form__title"><?php the_field('form_title', 'option'); ?></h2>
       <?php
