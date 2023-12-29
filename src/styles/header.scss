@@ -106,14 +106,17 @@
 	}
 
 	&__last-block{
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		position: absolute;
-		color: #666B71;
-		width: 100%;
-		padding: 0.5rem 0;
+		display: none;
 
+		@media screen and (max-width: $desktop) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			position: absolute;
+			color: #666B71;
+			width: 100%;
+			padding: 0.5rem 0;
+		}
 	}
 
 	&__last-text{
@@ -222,5 +225,24 @@
 .burger.active span{
 	transform: scale(0);
 }
+.burger.active span{
+	transform: scale(0);
+}
+
+.burger.active::before{
+	top:50%;
+	transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after{
+	bottom:50%;
+	transform: rotate(45deg) translate(0, 50%);
+}
+
+@keyframes burgerAnimation {
+	from{opasity: 0}
+	to {opasity: 1}
+}
+
 
 
