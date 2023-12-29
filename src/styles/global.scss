@@ -1,16 +1,16 @@
 .container {
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 16px;
+	padding: 0 1rem;
 
 	@media screen and (min-width: $tablet) {
 		max-width: $desktop;
-		padding: 0 32px;
+		padding: 0 2rem;
 	}
 
 	@media screen and (min-width: $desktop) {
-		max-width: 1440px;
-		padding: 0 36px;
+		max-width: 90rem;
+		padding: 0 2.25rem;
 	}
 }
 
@@ -18,10 +18,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 15px;
+	padding: 1rem;
 	width: fit-content;
 	cursor: pointer;
-	border: 1px solid $grey40;
 	font-family: inherit;
 	font-weight: 600;
 	line-height: 0.875;
@@ -43,20 +42,20 @@
 	}
 
 	@media screen and (max-width: $mobile) {
-		font-size: 14px;
+		font-size: 0.875rem;
 		line-height: 1;
 	}
 }
 
 .arrow-icon {
-	width: 16px;
-	height: 16px;
-	margin-left: 24px;
+	width: 1rem;
+	height: 1rem;
+	margin-left: 1.5rem;
 	stroke: rgba(103, 107, 112, 0.31);
 
 	@media screen and (max-width: $mobile) {
-		width: 14px;
-		height: 14px;
+		width: 0.875rem;
+		height: 0.875rem;
 	}
 }
 
