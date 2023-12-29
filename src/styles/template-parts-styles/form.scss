@@ -1,0 +1,154 @@
+@import "../variables.scss";
+
+.form__title {
+	width: 36rem;
+	margin-bottom: 2.5rem;
+	color: $dark-white;
+	font-size: 3rem;
+	font-weight: 600;
+	line-height: 1;
+
+	@media screen and (max-width: $big-tablet) {
+		width: 21.5rem;
+		margin-bottom: 2rem;
+		font-size: 1.75rem;
+		line-height: 1;
+	}
+
+	@media screen and (max-width: $mobile) {
+		width: 100%;
+	}
+}
+
+.input__wrap {
+	height: 3.75rem;
+	margin-bottom: 0.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.contact__input {
+	width: 100%;
+	padding-bottom: 1.25rem;
+	color: $main-white;
+	font-size: 0.875rem;
+	line-height: 1.2;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	background-color: transparent;
+	cursor: text;
+}
+
+.contact__input::placeholder {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.wpcf7-list-item {
+	margin: 0;
+}
+
+.wpcf7-not-valid-tip {
+	margin-top: 0.25rem;
+	color: $alert;
+	font-size: 0.75rem;
+	line-height: calc(14 / 12);
+	letter-spacing: 0.12px;
+}
+
+.wpcf7-not-valid {
+	border-color: $alert;
+}
+
+.notification {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 33.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+	z-index: 10;
+	padding: 8.5rem 0;
+	border-radius: $btn-border-radius;
+	border: 1px solid $grey15;
+	background: $main-white;
+
+	@media screen and (max-width: $desktop) {
+		width: 21.5rem;
+		padding: 4.75rem 0;
+	}
+
+	@media screen and (max-width: $mobile) {
+		width: 94%;
+	}
+}
+
+.notification__text {
+	padding: 0 0.625rem;
+	color: $grey70;
+	line-height: calc(20 / 16);
+	text-align: center;
+}
+
+.notification__icon {
+	background-image: url(../../../assets/images/sprite.svg#arrow);
+	background-size: contain;
+	border-radius: 50%;
+	background-color: $grey40;
+}
+
+.form-btn__wrap {
+	position: relative;
+	width: fit-content;
+
+	&:hover,
+	&:focus {
+		.form-icon {
+			transition: stroke $transition-function;
+			stroke: $grey70;
+		}
+	}
+}
+
+.form-btn {
+	position: relative;
+	padding-right: 3.375rem;
+	margin-bottom: -19px;
+	margin-top: 1.25rem;
+	background-color: $main-white;
+}
+
+.form-icon {
+	position: absolute;
+	top: 1rem;
+	left: 6.875rem;
+	width: 1rem;
+	height: 1rem;
+	stroke: rgba(103, 107, 112, 0.31);
+	pointer-events: none;
+
+	@media screen and (max-width: $mobile) {
+		width: 0.875rem;
+		height: 0.875rem;
+	}
+}
+
+.wpcf7-spinner {
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	top: 0.875rem;
+	left: 6.375rem;
+	background-color: $grey50;
+
+	@media screen and (max-width: $mobile) {
+		left: 63px;
+	}
+}
+
+.wpcf7-response-output {
+	display: none;
+}
