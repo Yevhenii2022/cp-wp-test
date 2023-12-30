@@ -1,3 +1,79 @@
 .footer {
-	color: blue;
+	border-radius:$page-border-radius;
+    background: linear-gradient(180deg, #8E98A1 0%, #A2ABB1 65.04%, #61686E 124.88%);
+
+	&__content{
+		display: flex;
+		padding: 4rem 0;
+		gap: 17%;
+		@media screen and (max-width: $desktop) {
+			gap: 12%;
+	    }
+		@media screen and (max-width: $big-tablet) {
+			flex-direction: column;	
+			gap: 0;	
+				
+		}
+
+}
+
+	&__form{
+		width: 575px;
+		height: 373px;
+		border: 2px solid black;
+	}
+
+	&__wrapper{
+		display: flex;
+		flex-direction: column;
+
+		@media screen and (max-width: $big-tablet) {
+		  margin-top: 4rem;	
+		}
+	}
+
+	&__list{
+
+		&>li{
+			margin-bottom: 1rem;
+			color: $second-white;
+			font-size: 0.875rem;
+			line-height: 100%;
+
+			@media screen and (max-width: $desktop) {
+								
+			}
+		}
+	}
+
+	&__menu{
+		display: flex;
+		gap: 27%;
+		margin-top: 2rem;
+
+		@media screen and (max-width: $desktop) {
+			gap: 15%;
+		}
+		@media screen and (max-width: $big-tablet) {
+			gap: 0;
+			justify-content: space-between;
+		}
+		
+		
+	}
+
+	&__document-menu{
+		
+		@media screen and (max-width: $desktop) {
+					
+		}
+	}
+
+	&__document-item{
+		margin-bottom: 1rem;
+		font-size: 0.875rem;
+		line-height: 100%;
+		color: $second-white;
+	}
+	
 }
