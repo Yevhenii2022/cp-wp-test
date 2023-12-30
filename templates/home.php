@@ -71,6 +71,44 @@ get_header();
     </div>
   </section>
 
+  <section class="about">
+    <div class="container about-wraper">
+      <div class="about-flex">
+        <?php
+        $image = get_field('about_img');
+        $size = 'medium';
+        $custom_class = 'about__img';
+
+        if ($image) {
+          echo wp_get_attachment_image($image, $size, false, array('class' => $custom_class));
+        }
+        ?>
+      </div>
+
+      <div class="about-flex">
+
+        <?php
+        // Заміна кольору тексту
+        $text = get_field('about_title');
+        $changed_text = get_field('about_title_chn');
+        $changed_color = 'rgba(103, 107, 112, 0.31)';
+        $text_with_color = '<span style="color: ' . $changed_color . ';">' . $changed_text . '</span>';
+        $modified_text = str_replace($changed_text, $text_with_color, $text);
+        ?>
+
+        <h2 class="about__title"><?php echo $modified_text; ?></h2>
+        <p class="about__text"><?php the_field('about_text_first'); ?></p>
+        <p class="about__text"><?php the_field('about_text_second'); ?></p>
+        <a href="#" class="button  about-margin">
+          <?php the_field('about_btn_text'); ?>
+          <svg class="arrow-icon stroke">
+            <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <?php get_footer(); ?>
