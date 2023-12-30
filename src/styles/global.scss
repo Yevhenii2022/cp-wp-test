@@ -54,6 +54,7 @@
 	height: 1rem;
 	margin-left: 1.5rem;
 	stroke: rgba(103, 107, 112, 0.31);
+	transition: all $transition-function;
 
 	@media screen and (max-width: $mobile) {
 		width: 0.875rem;

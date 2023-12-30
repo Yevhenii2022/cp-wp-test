@@ -63,3 +63,169 @@
 		width: 100%;
 	}
 }
+
+.iso {
+	padding: 64px 0;
+	border-radius: $page-border-radius;
+	background: linear-gradient(180deg, #8e98a1 0%, #a2abb1 65.04%, #61686e 124.88%);
+
+	@media screen and (max-width: $big-tablet) {
+		padding: 40px 0;
+	}
+}
+
+.iso-wrapper {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 4rem;
+	height: 250px;
+
+	@media screen and (max-width: $big-tablet) {
+		margin-bottom: 2rem;
+		flex-direction: column;
+		gap: 0.5rem;
+		align-items: flex-start;
+		height: 100%;
+	}
+}
+
+.iso-title {
+	width: 480px;
+	color: $main-white;
+	font-size: 3.5rem;
+	font-weight: 600;
+	line-height: 1;
+
+	@media screen and (max-width: $desktop) {
+		width: 305px;
+		font-size: 2.25rem;
+	}
+
+	@media screen and (max-width: $big-tablet) {
+		width: 240px;
+		font-size: 1.75rem;
+	}
+
+	@media screen and (max-width: $mobile) {
+		width: 100%;
+	}
+}
+
+.iso__subtitle {
+	width: 400px;
+	display: flex;
+	align-items: flex-end;
+	color: $main-white;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.2;
+	letter-spacing: -0.16px;
+
+	@media screen and (max-width: $big-tablet) {
+		width: 320px;
+		font-size: 0.875rem;
+	}
+
+	@media screen and (max-width: $mobile) {
+		width: 100%;
+	}
+}
+
+.iso__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	justify-content: space-evenly;
+
+	@media screen and (max-width: $tablet) {
+		gap: 8px;
+	}
+}
+
+.iso__card {
+	width: 330px;
+	height: 257px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 20px 16px;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: $card-border-radius;
+
+	&:hover,
+	&:focus {
+		.iso__icon {
+			stroke: $grey15;
+			transform: rotate(0deg);
+		}
+	}
+
+	@media screen and (max-width: 1440px) {
+		width: 290px;
+		height: 230px;
+	}
+
+	@media screen and (max-width: $desktop) {
+		width: 240px;
+		height: 230px;
+	}
+
+	@media screen and (max-width: $tablet) {
+		width: 160px;
+		height: 132px;
+		padding: 8px;
+	}
+
+	@media screen and (max-width: $mobile) {
+		width: 140px;
+		height: 140px;
+	}
+}
+
+.iso__card-wrapper {
+	display: flex;
+	justify-content: space-between;
+
+	@media screen and (max-width: $big-tablet) {
+	}
+}
+
+.iso__img {
+	width: 108px;
+	margin-left: 6px;
+
+	@media screen and (max-width: $tablet) {
+		width: 56px;
+		margin-left: 1px;
+	}
+}
+
+.iso__icon {
+	margin: -7px -3px 0 0;
+	width: 0.875rem;
+	height: 0.875rem;
+	stroke: $main-white;
+	transform: rotate(-45deg);
+	transition: all $transition-function;
+
+	@media screen and (max-width: $tablet) {
+		margin: 0;
+		width: 12px;
+		height: 12px;
+	}
+}
+
+.iso__text {
+	color: $main-white;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1;
+	letter-spacing: -0.16px;
+	text-transform: capitalize;
+
+	@media screen and (max-width: $tablet) {
+		font-size: 0.75rem;
+		font-weight: 400;
+		letter-spacing: -0.12px;
+	}
+}
