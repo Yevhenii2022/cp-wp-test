@@ -110,6 +110,7 @@
 		margin-bottom: 1rem;
 		font-size: 0.875rem;
 		line-height: 0.875rem;
+		letter-spacing: 0.03rem;	
 	}
 
 	&__last-block{
@@ -154,42 +155,30 @@
 
 .header__list a{
 	position: relative;
-	transition: color $transition-function;
+	transition: all $transition-function;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 100%;
 	letter-spacing: 0.025rem;
-	
-	    &::before {
-			content: "";
-			position: absolute;
-			bottom: 1px;
-			left: 0;
-			width: 0;
-			height: 2px;
-			background-color: $main-white;
-			transition: width 0.3s ease-in-out;
-				
-			&:hover::before {
-				width: 100%;
-			}
 
-			&.active {
-				color: $main-white;
-				opacity: 0.3;
-				&::before {
-					width: 100%;
-				}
+		@media screen and (max-width: $desktop) {
+			font-size: 2rem;
+			font-weight: 500;
+			z-index: 100;
+					}
+	    &:hover{
+				border-bottom: 0.05rem solid $main-white;
 			}
+			
 		}
-	
-	@media screen and (max-width: $desktop) {
-		font-size: 2rem;
-		font-weight: 500;
-		z-index: 100;
-	}
-}
 
+			
+.header__list li.active a{
+				opacity: 0.3;
+				 color: red($color: #000000);
+			}
+
+	
 .burger{
 	display: none;
 
