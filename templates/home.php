@@ -109,6 +109,16 @@ get_header();
     </div>
   </section>
 
+  <section class="work">
+    <div class="container work-wraper">
+      <div class="work-flex">
+        <h2 class="work__title work-color"><?php the_field('work_title_first'); ?></h2>
+        <h2 class="work__title"><?php the_field('work_title_second'); ?></h2>
+      </div>
+      <p class="work__text"><?php the_field('work_text'); ?></p>
+    </div>
+  </section>
+
 </main>
 
 <?php get_footer(); ?>
