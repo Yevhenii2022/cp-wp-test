@@ -119,6 +119,54 @@ get_header();
     </div>
   </section>
 
+
+
+  <div class="container">
+
+
+    <div class="horizontal-line">
+      <div class="circle" data-index="1" style="--index: 1;">
+        <span class="circle-number">1</span>
+        <div class="popup">
+          <svg class="popup-svg" width="40" height="40">
+            <circle cx="20" cy="20" r="18" fill="grey"></circle>
+            <!-- Ваш SVG-код тут -->
+          </svg>
+          <p class="popup-text">Text 1</p>
+        </div>
+        <p class="circle-description">Description 1</p>
+      </div>
+
+      <div class="circle" data-index="2" style="--index: 2;">
+        <span class="circle-number">2</span>
+        <div class="popup">
+          <svg class="popup-svg" width="40" height="40">
+            <circle cx="20" cy="20" r="18" fill="grey"></circle>
+            <!-- Ваш SVG-код тут -->
+          </svg>
+          <p class="popup-text">Text 2</p>
+        </div>
+        <p class="circle-description">Description 2</p>
+      </div>
+
+      <div class="circle" data-index="3" style="--index: 3;">
+        <span class="circle-number">3</span>
+        <div class="popup">
+          <svg class="popup-svg" width="40" height="40">
+            <circle cx="20" cy="20" r="18" fill="grey"></circle>
+            <!-- Ваш SVG-код тут -->
+          </svg>
+          <p class="popup-text">Text 3</p>
+        </div>
+        <p class="circle-description">Description 3</p>
+      </div>
+      <!-- Додайте інші елементи за потреби -->
+    </div>
+
+
+  </div>
+
+
 </main>
 
 <?php get_footer(); ?>

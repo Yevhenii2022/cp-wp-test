@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll(".circle").forEach((e=>{const t=e.querySelector(".popup");e.addEventListener("mouseenter",(()=>{t.classList.add("fadeIn")})),e.addEventListener("mouseleave",(()=>{t.classList.remove("fadeIn")}))}))}));
