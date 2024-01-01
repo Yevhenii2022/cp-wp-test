@@ -84,4 +84,8 @@
 	&__document-item:not(:last-child) {
 		margin-bottom: 1rem;
 	}
+
+	&__last{
+		position: relative;
+	}
 }

@@ -31,8 +31,12 @@
                 </div>  
             </div>
         </div>
+        <div class="footer__last">
+            <?php get_template_part('template-parts/last-part'); ?> 
+        </div>
+         
     </div>
-      
+    
       
 </footer>
 <?php wp_footer(); ?>
