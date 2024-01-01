@@ -110,62 +110,40 @@ get_header();
   </section>
 
   <section class="work">
-    <div class="container work-wraper">
-      <div class="work-flex">
-        <h2 class="work__title work-color"><?php the_field('work_title_first'); ?></h2>
-        <h2 class="work__title"><?php the_field('work_title_second'); ?></h2>
+    <div class="container">
+      <div class="work-wraper">
+        <div class="work-flex">
+          <h2 class="work__title work-color"><?php the_field('work_title_first'); ?></h2>
+          <h2 class="work__title"><?php the_field('work_title_second'); ?></h2>
+        </div>
+        <p class="work__text"><?php the_field('work_text'); ?></p>
       </div>
-      <p class="work__text"><?php the_field('work_text'); ?></p>
+
+      <div class="work__line">
+        <?php
+        $circles = get_field('tooltip', 'options');
+
+        foreach ($circles as $index => $circle) {
+        ?>
+          <div class="circle" data-index="<?php echo $index + 1; ?>" style="--index: <?php echo $index + 1; ?>;">
+            <span class="circle-number"><?php echo sprintf('%02d', $index + 1); ?></span>
+
+            <div class="popup">
+              <?php
+              $popup_text = $circle['popup_text'];
+              $popup_description = $circle['description'];
+              $popup_icon = $circle['popup_icon'];
+              ?>
+              <img class="popup-img" src="<?php echo esc_url($popup_icon['url']); ?>" alt="<?php echo esc_attr($popup_icon['alt']); ?>">
+              <p class="popup-text"><?php echo esc_html($popup_text); ?></p>
+            </div>
+            <p class="circle-description"><?php echo esc_html($popup_description); ?></p>
+          </div>
+        <?php } ?>
+      </div>
+
     </div>
   </section>
-
-
-
-  <div class="container">
-
-
-    <div class="horizontal-line">
-      <div class="circle" data-index="1" style="--index: 1;">
-        <span class="circle-number">1</span>
-        <div class="popup">
-          <svg class="popup-svg" width="40" height="40">
-            <circle cx="20" cy="20" r="18" fill="grey"></circle>
-            <!-- Ваш SVG-код тут -->
-          </svg>
-          <p class="popup-text">Text 1</p>
-        </div>
-        <p class="circle-description">Description 1</p>
-      </div>
-
-      <div class="circle" data-index="2" style="--index: 2;">
-        <span class="circle-number">2</span>
-        <div class="popup">
-          <svg class="popup-svg" width="40" height="40">
-            <circle cx="20" cy="20" r="18" fill="grey"></circle>
-            <!-- Ваш SVG-код тут -->
-          </svg>
-          <p class="popup-text">Text 2</p>
-        </div>
-        <p class="circle-description">Description 2</p>
-      </div>
-
-      <div class="circle" data-index="3" style="--index: 3;">
-        <span class="circle-number">3</span>
-        <div class="popup">
-          <svg class="popup-svg" width="40" height="40">
-            <circle cx="20" cy="20" r="18" fill="grey"></circle>
-            <!-- Ваш SVG-код тут -->
-          </svg>
-          <p class="popup-text">Text 3</p>
-        </div>
-        <p class="circle-description">Description 3</p>
-      </div>
-      <!-- Додайте інші елементи за потреби -->
-    </div>
-
-
-  </div>
-
 
 </main>
 

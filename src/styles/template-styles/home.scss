@@ -330,24 +330,23 @@
 }
 
 .work {
-	padding: 4rem 0;
+	padding: 4rem 0 8rem 0;
 
 	@media screen and (max-width: $big-tablet) {
-		padding: 2.5rem 0;
+		padding: 2.5rem 0 6.5rem 0;
 	}
 
 	&-wraper {
 		display: flex;
 		justify-content: space-between;
-
-		@media screen and (max-width: 1120px) {
-		}
+		margin-bottom: 13.625rem;
 
 		@media screen and (max-width: $desktop) {
 			gap: 2.5rem;
 		}
 
 		@media screen and (max-width: $big-tablet) {
+			margin-bottom: 11.75rem;
 			flex-direction: column;
 			gap: 0;
 		}
@@ -403,20 +402,20 @@
 	}
 }
 
-.horizontal-line {
+.work__line {
 	position: relative;
 	width: 100%;
 	height: 1px;
-	background-color: grey;
+	background-color: rgba(102, 107, 113, 0.2);
 
 	.circle {
 		position: absolute;
-		top: -12px;
-		left: calc(160px * (var(--index) - 1));
-		width: 24px;
-		height: 24px;
+		top: -0.75rem;
+		left: calc(167px * (var(--index) - 1));
+		width: 1.5rem;
+		height: 1.5rem;
 		border-radius: 50%;
-		background-color: grey;
+		background-color: $grey70;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -428,7 +427,10 @@
 		}
 
 		.circle-number {
-			color: white;
+			color: $main-white;
+			font-size: 0.625rem;
+			line-height: 1;
+			letter-spacing: -0.2px;
 		}
 
 		.popup {
@@ -437,36 +439,55 @@
 			visibility: hidden;
 			transition: opacity 400ms ease, visibility 400ms ease;
 			position: absolute;
-			top: -100px; /* Змінено від'ємне значення */
+			top: -10rem;
 			left: 0;
-			width: 199px;
-			padding: 8px;
-			background-color: white;
-			border: 1px solid grey;
-			border-radius: 4px;
+			width: 12.5rem;
+			padding: 0.5rem;
+			border: 1px solid rgba(102, 107, 113, 0.2);
+			border-radius: $card-border-radius;
+
+			@media screen and (max-width: $big-tablet) {
+				top: -7.25rem;
+				width: 10.5rem;
+			}
 
 			&.fadeIn {
 				opacity: 1;
 				visibility: visible;
 			}
 
-			.popup-svg {
-				margin-bottom: 8px;
+			.popup-img {
+				width: 2.5rem;
+				margin-bottom: 0.9375rem;
+
+				@media screen and (max-width: $big-tablet) {
+					width: 1.625rem;
+					margin-bottom: 0.4375rem;
+				}
 			}
 
 			.popup-text {
-				font-size: 14px;
-				line-height: 1.4;
+				color: rgba(102, 107, 113, 0.6);
+				font-size: 0.875rem;
+				line-height: 1;
+				letter-spacing: -0.14px;
+
+				@media screen and (max-width: $big-tablet) {
+					font-size: 0.75rem;
+					letter-spacing: -0.12px;
+				}
 			}
 		}
 
 		.circle-description {
+			width: 7.75rem;
 			position: absolute;
-			top: 18px; /* Відстань від нижньої точки кружочка */
-			left: -80px;
-			width: 199px;
-			text-align: center;
-			color: grey;
+			top: 2.3125rem;
+			left: 0;
+			font-size: 0.875rem;
+			font-weight: 500;
+			line-height: 1;
+			letter-spacing: -0.28px;
 		}
 	}
 }
