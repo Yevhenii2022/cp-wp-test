@@ -1,0 +1,91 @@
+@import "../variables.scss";
+
+.work__line {
+	position: relative;
+	width: 100%;
+	height: 1px;
+	background-color: rgba(102, 107, 113, 0.2);
+
+	.circle {
+		position: absolute;
+		top: -0.75rem;
+		left: calc(167px * (var(--index) - 1));
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 50%;
+		background-color: $grey70;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+
+		&:hover .popup {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.circle-number {
+			color: $main-white;
+			font-size: 0.625rem;
+			line-height: 1;
+			letter-spacing: -0.2px;
+		}
+
+		.popup {
+			display: block;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 400ms ease, visibility 400ms ease;
+			position: absolute;
+			top: -10rem;
+			left: 0;
+			width: 12.5rem;
+			padding: 0.5rem;
+			border: 1px solid rgba(102, 107, 113, 0.2);
+			border-radius: $card-border-radius;
+
+			@media screen and (max-width: $big-tablet) {
+				top: -7.25rem;
+				width: 10.5rem;
+			}
+
+			&.fadeIn {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			.popup-img {
+				width: 2.5rem;
+				margin-bottom: 0.9375rem;
+
+				@media screen and (max-width: $big-tablet) {
+					width: 1.625rem;
+					margin-bottom: 0.4375rem;
+				}
+			}
+
+			.popup-text {
+				color: rgba(102, 107, 113, 0.6);
+				font-size: 0.875rem;
+				line-height: 1;
+				letter-spacing: -0.14px;
+
+				@media screen and (max-width: $big-tablet) {
+					font-size: 0.75rem;
+					letter-spacing: -0.12px;
+				}
+			}
+		}
+
+		.circle-description {
+			width: 7.75rem;
+			position: absolute;
+			top: 2.3125rem;
+			left: 0;
+			font-size: 0.875rem;
+			font-weight: 500;
+			line-height: 1;
+			letter-spacing: -0.28px;
+		}
+	}
+}

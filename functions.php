@@ -52,6 +52,11 @@ function cp_wp_test_scripts()
     wp_enqueue_style('form-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/form.css', array('main'));
     wp_enqueue_script('form-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/form.js', array(), false, true);
   }
+
+  if (is_singular() && locate_template('template-parts/tooltip.php')) {
+    wp_enqueue_style('tooltip-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/tooltip.css', array('main'));
+    wp_enqueue_script('tooltip-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/tooltip.js', array(), false, true);
+  }
 }
 /** add fonts */
 function add_custom_fonts()
