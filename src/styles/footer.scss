@@ -56,12 +56,13 @@
 	}
 
 	&__menu{
+		
 		display: flex;
 		gap: 25%;
 		margin-top: 2rem;
 
 		@media screen and (max-width: $desktop) {
-			gap: 15%;
+			gap: 11%;
 		}
 		@media screen and (max-width: $big-tablet) {
 			gap: 0;

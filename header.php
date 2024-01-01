@@ -43,19 +43,17 @@
                             <?php endif; ?>
                             </ul>   
                             <div class="header__last-block">
-                            <?php
-                                if (has_custom_logo()) {
-                                    echo get_custom_logo();
-                                }
-                                ?>
+                                <?php
+                                    if (has_custom_logo()) {
+                                        echo get_custom_logo();
+                                    }
+                                    ?>
                                 <p class="header__last-text">© Factum 2023. All rights reserved.</p>
-                       </div>
+                            </div>
                          </div>
                     <a class="header__phone" href="tel:+<?php the_field('header_phone', 'option'); ?>" >
                         <?php the_field('header_phone', 'option'); ?></a>
                 </div>
-
-                
                 <div class="burger">
                     <span class="burger__title">Меню</span>
                     <span></span>

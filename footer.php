@@ -28,12 +28,12 @@
                             <?php endwhile; ?>
                         <?php endif; ?>
                     </ul>   
-               </div>  
-          </div>
+                </div>  
+            </div>
+        </div>
     </div>
       
-      </div>
-  </div>
+      
 </footer>
 <?php wp_footer(); ?>
 </body>
