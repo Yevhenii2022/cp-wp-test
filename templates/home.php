@@ -109,6 +109,21 @@ get_header();
     </div>
   </section>
 
+  <section class="work">
+    <div class="container">
+      <div class="work-wraper">
+        <div class="work-flex">
+          <h2 class="work__title work-color"><?php the_field('work_title_first'); ?></h2>
+          <h2 class="work__title"><?php the_field('work_title_second'); ?></h2>
+        </div>
+        <p class="work__text"><?php the_field('work_text'); ?></p>
+      </div>
+
+      <?php get_template_part('template-parts/tooltip'); ?>
+
+    </div>
+  </section>
+
 </main>
 
 <?php get_footer(); ?>
