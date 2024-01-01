@@ -1,3 +1,91 @@
 .footer {
-	color: blue;
+	border-radius:$page-border-radius;
+    background: linear-gradient(180deg, #8E98A1 0%, #A2ABB1 65.04%, #61686E 124.88%);
+	
+	@media screen and (max-width: $desktop) {
+		border-radius: $btn-border-radius-9;
+	}
+	&__content{
+		display: flex;
+		padding: 4rem 0;
+		gap: 17%;
+		@media screen and (max-width: $desktop) {
+			gap: 12%;
+			
+	    }
+		@media screen and (max-width: $big-tablet) {
+			flex-direction: column;	
+			gap: 0;	
+			padding: 2.5rem;	
+		}
+		@media screen and (max-width: $tablet) {
+			padding: 2.5rem 0;	
+		}
+    }
+
+	&__form{
+		width: 575px;
+		height: 373px;
+		border: 2px solid black;
+	}
+
+	&__wrapper{
+		display: flex;
+		flex-direction: column;
+
+		@media screen and (max-width: $big-tablet) {
+		  margin-top: 4rem;	
+		}
+	}
+
+	&__list{
+
+		&>li{
+			color: $second-white;
+			font-size: 0.875rem;
+			line-height: 100%;
+
+			@media screen and (max-width: $desktop) {
+								
+			}
+		}
+
+		&>li:not(:last-child){
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__menu{
+		
+		display: flex;
+		gap: 25%;
+		margin-top: 2rem;
+
+		@media screen and (max-width: $desktop) {
+			gap: 11%;
+		}
+		@media screen and (max-width: $big-tablet) {
+			gap: 0;
+			justify-content: space-between;
+		}
+		@media screen and (max-width: $tablet) {
+			margin-top: 1.5rem;	
+		  }
+
+	}
+
+	&__document-item {
+		letter-spacing: 0.03rem;
+		font-size: 0.875rem;
+		line-height: 100%;
+		color: $second-white;
+	}
+	
+	&__document-item:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+
+	&__last{
+		position: relative;
+	}
 }
