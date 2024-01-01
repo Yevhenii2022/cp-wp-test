@@ -2,6 +2,7 @@
 	position: absolute;
     width: 100%;
 	border-bottom: 0.05rem solid rgba(255, 255, 255, 0.40);
+    z-index: 100;
 	
 		@media screen and (max-width: $desktop) {
 			border-bottom: 0;
@@ -18,28 +19,33 @@
 		@media screen and (max-width: $desktop) {
 		padding: 0 0;
 		}
-		@media screen and (max-width: $tablet) {
-			
-		}
     }
+
 	&__logo{
 		z-index: 100;
 	}
+
     &__menu{
 		display: flex;
 		color:$main-white;
 	}
+
     &__menu-wrapper{
 		@media screen and (max-width: $desktop) {
 		    border-radius: 0px 0px 9px 9px;
-			background: linear-gradient(180deg, #8E98A1 0%, #A2ABB1 65.04%, #61686E 124.88%);
+			background: $dark-gradient;
 			height: fit-content;
 			width: 100%;
 			top: 0px;
             position: fixed;
-			padding: 0 1rem;
+			padding: 0 2rem;
+
+			@media screen and (max-width: $tablet) {
+				padding: 0 1rem;
+			}
 		}
 	}
+
 	&__nav{
 		display: flex;
 				
@@ -56,6 +62,7 @@
 			padding: 0 0;
 			animation: burgerAnimation 0.4s;
 		}
+
 		@media screen and (max-width: $tablet) {
 			top: 38px;
 		}
@@ -70,10 +77,11 @@
 			flex-direction: column;
 			align-items: flex-start;
 			margin-top: 7.5rem;
-          }
+        }
 			
 		&>li{
 			margin-right: 1.5rem;
+
 			@media screen and (max-width: $desktop) {
 				margin-right: 0;
 				margin-bottom: 1rem;
@@ -95,7 +103,6 @@
 			flex-direction: column;
 			margin-bottom: 3rem;
 			margin-top: 11.5rem;
-
 		}
 	}
 
@@ -103,26 +110,20 @@
 		margin-bottom: 1rem;
 		font-size: 0.875rem;
 		line-height: 0.875rem;
+		letter-spacing: 0.03rem;	
 	}
 
-	&__last-block{
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		position: absolute;
-		color: #666B71;
-		width: 100%;
-		padding: 0.5rem 0;
+	&__last{
+		display: none;
+		position: relative;
+
+		@media screen and (max-width: $desktop) {
+			display: block;
+		}
 
 	}
 
-	&__last-text{
-		font-size: 10px;
-		font-weight: 400;
-		text-align: right;
-		line-height: 100%;
-		letter-spacing: -0.1px;
-	}
+	
 }
 .header .custom-logo-link img {
    	width: 6.75rem;
@@ -137,48 +138,38 @@
 .open{
 	@media screen and (max-width: $desktop) {
 		display: flex;
-		background: wheat;
+		background: $second-white;
 	}
 	
 }
 
 .header__list a{
 	position: relative;
-	transition: color $transition-function;
+	transition: all $transition-function;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 100%;
 	letter-spacing: 0.025rem;
-	
-	@media screen and (max-width: $desktop) {
-		font-size:2rem;
-		font-weight: 500;
 
-		&::before {
-			content: "";
-			position: absolute;
-			bottom: 2px;
-			left: 0;
-			width: 0;
-			height: 2px;
-			background-color: $main-white;
-			transition: width 0.3s ease-in-out;
-		}
-
-		&:hover::before {
-			width: 100%;
-		}
-
-		&.active {
-			color: $main-white;
-			&::before {
-				width: 100%;
+		@media screen and (max-width: $desktop) {
+			font-size: 2rem;
+			font-weight: 500;
+			z-index: 100;
+					}
+	    &:hover{
+				border-bottom: 0.05rem solid $main-white;
 			}
+			
 		}
-	}
+
+			
+.header__list li.active a{
+				opacity: 0.3;
+				 color: red($color: #000000);
+			}
+
 	
-}
-	.burger{
+.burger{
 	display: none;
 
 	@media screen and (max-width: $desktop) {
@@ -186,20 +177,28 @@
 		position: relative;
 		z-index: 50;
 		align-items: center;
-		width: 1.5rem;
+		width: 2rem;
 		justify-content: flex-end;
-		height: 0.5rem;
+		height: 0.8rem;
 		cursor: pointer;
 
-		&__title{
-			padding-right: 2rem;
-			font-size: 0.875rem;
-			color: $main-white;
+		@media screen and (max-width: $tablet){
+			width: 1.5rem;
+			height: 0.5rem;
 		}
-	}
-    @media screen and (max-width: $tablet){
 		
-	}
+
+		&__title{
+			padding-right: 2.5rem;
+			font-size: 1.2rem;
+			color: $main-white;
+			@media screen and (max-width: $tablet){
+				padding-right: 2rem;
+				font-size: 0.8rem;
+				color: $main-white;
+		    }
+	    }
+    }
 }
 
 .burger::before, .burger::after{
@@ -222,5 +221,24 @@
 .burger.active span{
 	transform: scale(0);
 }
+.burger.active span{
+	transform: scale(0);
+}
+
+.burger.active::before{
+	top:50%;
+	transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after{
+	bottom:50%;
+	transform: rotate(45deg) translate(0, 50%);
+}
+
+@keyframes burgerAnimation {
+	from{opasity: 0}
+	to {opasity: 1}
+}
+
 
 
