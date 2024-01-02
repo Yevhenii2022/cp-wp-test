@@ -124,6 +124,25 @@ get_header();
     </div>
   </section>
 
+  <section class="map">
+    <div class="container map-flex">
+      <div>
+        <?php
+        $image = get_field('map');
+        $size = 'full';
+        $custom_class = 'map__img';
+        if ($image) {
+          echo wp_get_attachment_image($image, $size, false, array('class' => $custom_class));
+        }
+        ?>
+      </div>
+      <div>
+        <h2 class="map__title"><?php the_field('text_before'); ?><span class="map__title map-span"><?php the_field('map_number'); ?></span><?php the_field('text_after'); ?></h2>
+        <p class="map__text"><?php the_field('work_text'); ?></p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <?php get_footer(); ?>
