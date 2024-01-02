@@ -1,4 +1,124 @@
+@import "../variables.scss";
+
 .blog{
-    height: 1000px;
-    background: green;
+    &__banner{
+        height: 21rem;
+        background: $dark-gradient;
+        position: relative;
+    }
+
+    &__title{
+        font-size: 4.5rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        color: $main-white;
+        position: absolute;
+        top: 54%;
+        left: 3%;
+        letter-spacing: 0.1rem;
+    }
+
+    &__wrapper{
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    &__post{
+        border-radius: 0.375rem;
+        padding: 0.81rem 1rem 1rem 1rem ;
+        border: 0.8px solid rgba(102, 107, 113, 0.20);
+    }
+
+    &__post-image{
+        border-radius: 0.375rem;
+        margin-bottom: 1.25rem;
+        height: 9.94rem;
+    }
+        
+    &__post-image img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: .375rem;
+    }
+    
+    &__post-bottom{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    &__post-title{
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        width: 60%;
+    }
+
+    &__post-time{
+        color: $grey70;
+        opacity: 0.6; 
+        font-size: 0.875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 132%;
+        margin-bottom: 1rem;
+    }
+
+    &__button{
+        padding: 0;
+    }
+
+    &__arrow-icon{
+        width: 1rem;
+        height: 1rem;
+        margin-left: 1.5rem;
+        stroke: $grey70;
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transform: rotate(-45deg);
+    }
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    font-weight: 500;
+    @media screen and (max-width: $desktop) {
+      
+    }
+    @media screen and (max-width: $tablet) {
+      
+    }
+  }
+  
+  .pagination .page-numbers {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+      border-radius: 50%;
+      color: $grey70;
+      opacity: 30%;
+  
+      &:not(:last-child) {
+          margin-right: 8px;
+      }
+      &:hover {
+          border: 1px solid $grey40;
+      }
+  }
+  
+  .pagination .page-numbers.current {
+      background-color: #8F99A2;
+      color: $main-white;
+  }
+  
