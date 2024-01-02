@@ -124,6 +124,35 @@ get_header();
     </div>
   </section>
 
+  <section class="team">
+    <div class="container">
+
+      <div class="team-flex">
+        <h3 class="team__title"><?php the_field('team_title'); ?></h3>
+        <p class="team__text"><?php the_field('work_text'); ?></p>
+      </div>
+
+      <div class="team-wraper">
+        <?php
+        $team_numbers = get_field('team_number_list');
+
+        if ($team_numbers) {
+          foreach ($team_numbers as $team_item) {
+            $team_number = $team_item['team_number'];
+            $team_text = $team_item['team_number_text'];
+
+            echo '<div class="team__item">';
+            echo '<h4 class="team__number">' . esc_html($team_number) . '</h4>';
+            echo '<p class="team__desc">' . esc_html($team_text) . '</p>';
+            echo '</div>';
+          }
+        }
+        ?>
+      </div>
+
+    </div>
+  </section>
+
   <section class="map">
     <div class="container map-flex">
       <div>

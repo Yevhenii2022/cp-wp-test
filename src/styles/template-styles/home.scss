@@ -67,7 +67,7 @@
 .iso {
 	padding: 4rem 0;
 	border-radius: $page-border-radius;
-	background: linear-gradient(180deg, #8e98a1 0%, #a2abb1 65.04%, #61686e 124.88%);
+	background: $dark-gradient;
 
 	@media screen and (max-width: $big-tablet) {
 		padding: 2.5rem 0;
@@ -398,6 +398,118 @@
 
 		@media screen and (max-width: $tablet) {
 			width: fit-content;
+		}
+	}
+}
+
+.team {
+	padding: 4rem 0;
+	border-radius: $page-border-radius;
+	background: $dark-gradient;
+
+	@media screen and (max-width: $big-tablet) {
+		padding: 2.5rem 0;
+	}
+
+	&-flex {
+		margin-bottom: 4rem;
+		display: flex;
+		justify-content: space-between;
+		color: $main-white;
+
+		@media screen and (max-width: $big-tablet) {
+			flex-direction: column;
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	&__title {
+		width: 25rem;
+		font-size: 3rem;
+		font-weight: 600;
+		line-height: 1;
+
+		@media screen and (max-width: $desktop) {
+			width: 15.625rem;
+			font-size: 1.75rem;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__text {
+		width: 29.5rem;
+		font-size: 1rem;
+		line-height: 1.2;
+		letter-spacing: -0.16px;
+
+		@media screen and (max-width: $desktop) {
+			width: 19.375rem;
+			font-size: 0.875rem;
+			letter-spacing: -0.14px;
+		}
+
+		@media screen and (max-width: $mobile) {
+			width: fit-content;
+		}
+	}
+
+	&-wraper {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1rem;
+		padding: 2rem 6.375rem 2rem 2rem;
+		color: rgba(255, 255, 255, 0.31);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		border-radius: $card-border-radius;
+
+		@media screen and (max-width: $desktop) {
+			padding-right: 3.125rem;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			padding: 1rem 3.125rem 1rem 1rem;
+		}
+	}
+
+	&__item {
+		@media screen and (max-width: $desktop) {
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			width: calc(50% - 16px);
+		}
+	}
+
+	&__number {
+		margin-bottom: 0.5rem;
+		font-size: 3.5rem;
+		font-weight: 600;
+		line-height: 1;
+
+		@media screen and (max-width: $desktop) {
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			font-size: 1.75rem;
+		}
+	}
+
+	&__desc {
+		width: 9.375rem;
+		line-height: 1;
+		letter-spacing: -0.16px;
+
+		@media screen and (max-width: $desktop) {
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			width: 6.25rem;
+			font-size: 0.75rem;
+			letter-spacing: -0.12px;
 		}
 	}
 }
