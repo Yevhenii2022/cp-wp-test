@@ -27,4 +27,10 @@
 </g>
 </symbol>
 
+<defs>
+<symbol id="arrow" viewBox="0 0 15 14">
+<path d="M8 13L14 7M14 7L8 1M14 7L0 7"></path>
+</symbol>
+</defs>
+
 </svg>
