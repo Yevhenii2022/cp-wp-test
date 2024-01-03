@@ -76,7 +76,7 @@ get_header();
       <div class="about-flex">
         <?php
         $image = get_field('about_img');
-        $size = 'medium';
+        $size = 'full';
         $custom_class = 'about__img';
 
         if ($image) {

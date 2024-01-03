@@ -65,6 +65,17 @@ function cp_wp_test_scripts()
     wp_enqueue_style('last-part', get_template_directory_uri() . '/assets/styles/template-parts-styles/last-part.css', array('main'));
   }
 }
+
+function enqueue_custom_assets()
+{
+  // Підключення стилів для single-iso.php
+  if (is_single() && get_post_type() === 'iso') {
+    wp_enqueue_style('custom-iso-styles', get_template_directory_uri() . '/assets/styles/template-styles/iso-post.css');
+    wp_enqueue_script('custom-iso-script', get_template_directory_uri() . '/assets/scripts/template-scripts/iso-post.js', array('jquery'), '', true);
+  }
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_assets');
+
 /** add fonts */
 function add_custom_fonts()
 {
