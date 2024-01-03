@@ -5,7 +5,7 @@
 	@media screen and (max-width: $desktop) {
 		border-radius: $btn-border-radius-9;
 	}
-	&content {
+	&__content {
 		display: flex;
 		padding: 4rem 0;
 		gap: 17%;
@@ -22,7 +22,7 @@
 		}
 	}
 
-	&wrapper {
+	&__wrapper {
 		display: flex;
 		flex-direction: column;
 
@@ -31,7 +31,7 @@
 		}
 	}
 
-	&list {
+	&__list {
 		& > li {
 			color: $second-white;
 			font-size: 0.875rem;
@@ -46,7 +46,7 @@
 		}
 	}
 
-	&menu {
+	&__menu {
 		display: flex;
 		gap: 25%;
 		margin-top: 2rem;
@@ -63,14 +63,14 @@
 		}
 	}
 
-	&document-item {
+	&__document-item {
 		letter-spacing: 0.03rem;
 		font-size: 0.875rem;
 		line-height: 100%;
 		color: $second-white;
 	}
 
-	&document-item:not(:last-child) {
+	&__document-item:not(:last-child) {
 		margin-bottom: 1rem;
 	}
 
