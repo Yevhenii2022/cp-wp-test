@@ -18,7 +18,7 @@ get_header();
       <a href="#" class="button">
         <?php the_field('banner_btn_text'); ?>
         <svg class="arrow-icon stroke">
-          <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
+          <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
         </svg>
       </a>
     </div>
@@ -55,7 +55,7 @@ get_header();
                       <img class="iso__img" src="<?php echo get_template_directory_uri(); ?>/assets/images/iso.png" alt="iso logo">
                     <?php endif; ?>
                     <svg class="iso__icon">
-                      <use href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#arrow"></use>
+                      <use href="<?php echo get_template_directory_uri(); ?>/assets/images/icon-sprite.svg#arrow"></use>
                     </svg>
                   </div>
                   <p class="iso__text"><?php the_title(); ?></p>
@@ -102,7 +102,7 @@ get_header();
         <a href="#" class="button  about-margin">
           <?php the_field('about_btn_text'); ?>
           <svg class="arrow-icon stroke">
-            <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
+            <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
           </svg>
         </a>
       </div>
