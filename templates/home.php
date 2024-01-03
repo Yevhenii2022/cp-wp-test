@@ -18,7 +18,7 @@ get_header();
       <a href="#" class="button">
         <?php the_field('banner_btn_text'); ?>
         <svg class="arrow-icon stroke">
-          <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
+          <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
         </svg>
       </a>
     </div>
@@ -55,7 +55,7 @@ get_header();
                       <img class="iso__img" src="<?php echo get_template_directory_uri(); ?>/assets/images/iso.png" alt="iso logo">
                     <?php endif; ?>
                     <svg class="iso__icon">
-                      <use href="<?php echo get_template_directory_uri(); ?>/assets/images/sprite.svg#arrow"></use>
+                      <use href="<?php echo get_template_directory_uri(); ?>/assets/images/icon-sprite.svg#arrow"></use>
                     </svg>
                   </div>
                   <p class="iso__text"><?php the_title(); ?></p>
@@ -76,7 +76,7 @@ get_header();
       <div class="about-flex">
         <?php
         $image = get_field('about_img');
-        $size = 'medium';
+        $size = 'full';
         $custom_class = 'about__img';
 
         if ($image) {
@@ -102,7 +102,7 @@ get_header();
         <a href="#" class="button  about-margin">
           <?php the_field('about_btn_text'); ?>
           <svg class="arrow-icon stroke">
-            <use href="<?php echo get_template_directory_uri() ?>/assets/images/sprite.svg#arrow"></use>
+            <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
           </svg>
         </a>
       </div>
@@ -120,6 +120,100 @@ get_header();
       </div>
 
       <?php get_template_part('template-parts/tooltip'); ?>
+
+    </div>
+  </section>
+
+  <section class="team">
+    <div class="container">
+
+
+      <?php if (have_rows('team_slider')) : ?>
+
+        <div class="swiper-flex">
+
+          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+
+              <?php while (have_rows('team_slider')) : the_row();
+                $img = get_sub_field('team_img');
+                $quote = get_sub_field('quote');
+                $member = get_sub_field('team_member');
+                $position = get_sub_field('position');
+              ?>
+
+                <div class="swiper-slide">
+                  <div class="swiper-img-bg">
+                    <img src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
+                  </div>
+
+
+                  <div class="slider-text">
+                    <h3><?php echo $quote; ?></h3>
+                    <p><?php echo $member; ?></p>
+                    <p><?php echo $position; ?></p>
+                  </div>
+
+                </div>
+
+              <?php endwhile; ?>
+
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+
+
+          <div thumbsSlider="" class="swiper mySwiper">
+            <div class="swiper-wrapper swiper-flex-img">
+
+
+              <?php while (have_rows('team_slider')) : the_row();
+                $img = get_sub_field('team_img');
+              ?>
+
+                <div class="swiper-slide ">
+                  <div class="swiper-img-sm">
+                    <img src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
+                  </div>
+                </div>
+
+              <?php endwhile; ?>
+
+            </div>
+          </div>
+
+
+        </div>
+
+      <?php endif; ?>
+
+
+
+
+      <div class="team-flex">
+        <h3 class="team__title"><?php the_field('team_title'); ?></h3>
+        <p class="team__text"><?php the_field('work_text'); ?></p>
+      </div>
+
+      <div class="team-wraper">
+        <?php
+        $team_numbers = get_field('team_number_list');
+
+        if ($team_numbers) {
+          foreach ($team_numbers as $team_item) {
+            $team_number = $team_item['team_number'];
+            $team_text = $team_item['team_number_text'];
+
+            echo '<div class="team__item">';
+            echo '<h4 class="team__number">' . esc_html($team_number) . '</h4>';
+            echo '<p class="team__desc">' . esc_html($team_text) . '</p>';
+            echo '</div>';
+          }
+        }
+        ?>
+      </div>
 
     </div>
   </section>
