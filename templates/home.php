@@ -127,6 +127,71 @@ get_header();
   <section class="team">
     <div class="container">
 
+
+      <?php if (have_rows('team_slider')) : ?>
+
+        <div class="swiper-flex">
+
+          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+
+              <?php while (have_rows('team_slider')) : the_row();
+                $img = get_sub_field('team_img');
+                $quote = get_sub_field('quote');
+                $member = get_sub_field('team_member');
+                $position = get_sub_field('position');
+              ?>
+
+                <div class="swiper-slide">
+                  <div class="swiper-img-bg">
+                    <img src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
+                  </div>
+
+
+                  <div class="slider-text">
+                    <h3><?php echo $quote; ?></h3>
+                    <p><?php echo $member; ?></p>
+                    <p><?php echo $position; ?></p>
+                  </div>
+
+                </div>
+
+              <?php endwhile; ?>
+
+            </div>
+
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+
+
+          <div thumbsSlider="" class="swiper mySwiper">
+            <div class="swiper-wrapper swiper-flex-img">
+
+
+              <?php while (have_rows('team_slider')) : the_row();
+                $img = get_sub_field('team_img');
+              ?>
+
+                <div class="swiper-slide ">
+                  <div class="swiper-img-sm">
+                    <img src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
+                  </div>
+                </div>
+
+              <?php endwhile; ?>
+
+            </div>
+          </div>
+
+
+        </div>
+
+      <?php endif; ?>
+
+
+
+
       <div class="team-flex">
         <h3 class="team__title"><?php the_field('team_title'); ?></h3>
         <p class="team__text"><?php the_field('work_text'); ?></p>
