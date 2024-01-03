@@ -6,7 +6,9 @@ get_header();
 ?>
 <section class="blog">
       <div class="blog__banner">
+         <div class="container">
             <h1 class="blog__title"><?php the_field('banner_title'); ?></h1>
+         </div>
       </div>
    <div class="container">
            
@@ -24,24 +26,8 @@ get_header();
                         while ( $query->have_posts() ) {
                             $query->the_post();
                      ?> 
-            <div class="blog__post">
-               <div class="blog__post-image">
-                  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
-                     <?php the_post_thumbnail(); ?> 
-                  </a>
-               </div>
-               <p class="blog__post-time"><?php the_time('d.m.y'); ?></p>
-               <div class="blog__post-bottom">
-                   <h3 class="blog__post-title"><?php the_title(); ?></h3>
-                   <a href="<?php the_permalink(); ?>" class="blog__button button"><svg class="blog__arrow-icon">
-                        <use href="<?php echo get_template_directory_uri()?>/assets/images/sprite.svg#arrow"></use>
-                        </svg>
-                    </a>
-               </div>
-              
-            </div>
-          
-        
+               <?php get_template_part( 'template-parts/other-one-post'); ?>
+                  
           <?php }/*end while*/ ?>
          </div>
           <!-- pagination  -->
