@@ -22,10 +22,46 @@ get_header();
             <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
           </svg>
         </a>
+        <button id="toggleAccordion">Читати більше</button>
       </div>
-
     </div>
   </section>
+
+
+  <!-- accordeon -->
+  <div class="container">
+    <div id="accordeon" style="display:none;">
+      <div class="acc-item">
+        <div class="acc-head">
+          Заголовок 1
+        </div>
+        <button class="toggle-btn">+</button>
+        <div class="acc-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head">
+          Заголовок 2
+        </div>
+        <button class="toggle-btn">+</button>
+        <div class="acc-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head">
+          Заголовок 3
+        </div>
+        <button class="toggle-btn">+</button>
+        <div class="acc-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- accordeon -->
+
 
   <section class="expectation">
     <div class="container">
