@@ -26,16 +26,48 @@
 	}
 
 	&__sertificates{
-		margin-right: 1.5rem;
-
-
+		margin-right: 1.2rem;
+		
 	}
 
 	&__sertificates-icon{
 		width: 1rem;
-		height: 1rem;
+		height: 0.5rem;
 		stroke: $main-white;
 	}
+	&__sertificates-submenu{
+		display: none;
+		  	
+			background: $dark-gradient;
+			height: 500px;
+			padding-top: 7%;
+			border-radius: 0rem 0rem 1rem 1rem;
+			position: absolute;
+			left: -1px;
+			top: -7px;
+
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 0px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: $grey70;
+				transition: width 0.3s ease-in-out;
+			}
+	}
+	&__sertificate-items{
+		width: 100%;  
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 3rem;
+		width: 100%;
+		top: 0;
+		flex-direction: row;
+		padding: 0 36px;
+		}
+
     &__menu{
 		display: flex;
 		color:$main-white;
@@ -81,7 +113,7 @@
 		}
 
 		@media screen and (max-width: $tablet) {
-			top: 38px;
+			top: 2.37rem;
 		}
 	}
 
@@ -108,6 +140,7 @@
 
 	&__phone{
 		letter-spacing: 0.02rem;
+		z-index: 100;
 		@media screen and (max-width: $desktop) {
 			display: none;
 		}
@@ -249,9 +282,10 @@
 
 .burger.active span{
 	transform: scale(0);
+	
 }
-.burger.active span{
-	transform: scale(0);
+.burger.active{
+	height: 1.5rem;
 }
 
 .burger.active::before{

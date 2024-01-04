@@ -22,10 +22,30 @@
                 </div>
                 <div class="header__menu" id="">
                     <div class="header__nav">
-                        <div class="header__sertificates">Сертифікати
-                            <a class="header__sertificates-btn" href="" target="_blank" aria-label="read more"><svg class="header__sertificates-icon" width="56px" height="56px">
-                                <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
+                        <div class="header__sertificates">
+                            <a class="header__sertificates-btn" target="_blank" aria-label="read more">Сертифікати<svg class="header__sertificates-icon" width="56px" height="56px">
+                                <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow-down"></use>
                             </svg></a>
+                            <div class="header__sertificates-submenu">
+                                <ul class="header__sertificate-items">
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                    <li>Система управління інжинірінгу пожежної безпеки</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="header__menu-wrapper">
                             <?php wp_nav_menu([
