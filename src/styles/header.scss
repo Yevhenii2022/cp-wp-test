@@ -24,65 +24,31 @@
 	&__logo{
 		z-index: 100;
 	}
-
-	&__sertificates{
-		margin-right: 1.2rem;
-		
-	}
-
-	&__sertificates-icon{
-		width: 1rem;
-		height: 0.5rem;
-		stroke: $main-white;
-	}
-	&__sertificates-submenu{
-		display: none;
-		  	
-			background: $dark-gradient;
-			height: 500px;
-			padding-top: 7%;
-			border-radius: 0rem 0rem 1rem 1rem;
-			position: absolute;
-			left: -1px;
-			top: -7px;
-
-			&::before {
-				content: "";
-				position: absolute;
-				bottom: 0px;
-				left: 0;
-				width: 100%;
-				height: 2px;
-				background-color: $grey70;
-				transition: width 0.3s ease-in-out;
-			}
-	}
-	&__sertificate-items{
-		width: 100%;  
-		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		gap: 3rem;
-		width: 100%;
-		top: 0;
-		flex-direction: row;
-		padding: 0 36px;
-		}
-
-    &__menu{
+	
+	&__menu{
 		display: flex;
 		color:$main-white;
 	}
 
+	&__arrow-icon{
+		width: 1rem;
+		height: 1rem;
+		transform: rotate(0deg);
+	}
+
     &__menu-wrapper{
 		margin-right: 1px;
+		display: flex;
 
 		@media screen and (max-width: $desktop) {
-		    border-radius: 0px 0px 0.56rem 0.56rem ;
+		    border-radius: 0px 0px 0.56rem 0.56rem;
+			flex-direction: column;
 			background: $dark-gradient;
 			height: fit-content;
+			overflow: scroll;
 			width: 100%;
 			top: 0px;
-            position: fixed;
+            position: static;
 			padding: 0 2rem;
             height: 95%;
 			flex: 1;
@@ -97,6 +63,7 @@
 
 	&__nav{
 		display: flex;
+		
 				
 		@media screen and (max-width: $desktop) {
 			display: none;
@@ -125,7 +92,7 @@
 		@media screen and (max-width: $desktop) {
 			flex-direction: column;
 			align-items: flex-start;
-			margin-top: 7.5rem;
+			margin-top: 1rem;
         }
 			
 		&>li{
@@ -138,6 +105,24 @@
 		}
 	}
 
+	&__list a{
+		position: relative;
+		transition: all $transition-function;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: 0.025rem;
+	
+			@media screen and (max-width: $desktop) {
+				font-size: 2rem;
+				font-weight: 500;
+				z-index: 100;
+						}
+			&:hover{
+					border-bottom: 0.05rem solid $main-white;
+				}
+	        }
+	
 	&__phone{
 		letter-spacing: 0.02rem;
 		z-index: 100;
@@ -201,35 +186,8 @@
 		min-height: 95vh;
 		margin: 0;
 	}
-	
 }
 
-.header__list a{
-	position: relative;
-	transition: all $transition-function;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 100%;
-	letter-spacing: 0.025rem;
-
-		@media screen and (max-width: $desktop) {
-			font-size: 2rem;
-			font-weight: 500;
-			z-index: 100;
-					}
-	    &:hover{
-				border-bottom: 0.05rem solid $main-white;
-			}
-			
-		}
-
-			
-.header__list li.active a{
-				opacity: 0.3;
-				color: red($color: #000000);
-			}
-
-	
 .burger{
 	display: none;
 
@@ -248,7 +206,6 @@
 			height: 0.5rem;
 		}
 		
-
 		&__title{
 			padding-right: 2.5rem;
 			font-size: 1.2rem;
@@ -269,7 +226,6 @@
 	height: 2px;
 	width: 100%;
 	background-color: $main-white;
-	
 }
 
 .burger::before{
@@ -302,6 +258,80 @@
 	from{opasity: 0}
 	to {opasity: 1}
 }
+//Certificates
+#container {
+	display: none;
+	background: $dark-gradient;
+    padding: 7rem 2rem 2rem 2rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+	gap: 1.5rem;
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 100%;
+	        @media screen and (max-width: 1200px){
+				grid-template-columns: repeat(4, 1fr);
+			}
+			@media screen and (max-width: $desktop){
+				position: static;
+			    background: transparent;
+			    grid-template-columns: repeat(3, 1fr);
+				margin-top: 2.5rem;
+				padding: 0;
+			}
+			@media screen and (max-width: $tablet){
+					grid-template-columns: repeat(2, 1fr);
+				}
+		
+	&::before {
+		content: "";
+		position: absolute;
+		top: 4rem;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		border-bottom: 0.05rem solid rgba(255, 255, 255, 0.40);
+		transition: width 0.3s ease-in-out;
+		@media screen and (max-width: $desktop){
+			width: 0;
+		}
+	}
+}
+  
+  #toggleButton {
+	cursor: pointer;
+	z-index: 50;
+	margin-right: 1rem;
 
-
+		&:hover{
+			border-bottom: 0.05rem solid $main-white;
+			transition: transform 0.3s ease;
+	}
+	@media screen and (max-width: $desktop){
+		border-bottom: none;
+		font-size: 2rem;
+        margin: 9rem 0 0 0rem;
+		
+	}
+	@media screen and (max-width: $tablet){
+		border-bottom: none;
+		font-size: 2rem;
+        margin: 5rem 0 0 0rem;
+	}
+  }
+  
+  #toggleIcon {
+	font-size: 0.5rem;
+  }
+  
+  #container.visible #toggleIcon::after {
+	content: 'ᐯ';
+	transform: rotate(0deg);
+  }
 

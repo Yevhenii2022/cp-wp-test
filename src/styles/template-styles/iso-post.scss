@@ -1,3 +1,268 @@
-.sss {
-	background-color: rgb(216, 41, 94);
+@import "../variables.scss";
+
+.isobanner {
+	padding: 430px 0 64px 0;
+	border-bottom-left-radius: $page-border-radius;
+	border-bottom-right-radius: $page-border-radius;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	box-shadow: 0 16px 16px 0 $second-white, 0 -16px 16px 0 $second-white, 16px 0 16px 0 $second-white,
+		-16px 0 16px 0 $second-white;
+
+	@media screen and (max-width: $big-tablet) {
+		padding: 365px 0 1rem 0;
+	}
+
+	&-wrapper {
+		margin-bottom: 1rem;
+		display: flex;
+		gap: 1rem;
+
+		@media screen and (max-width: $desktop) {
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			display: block;
+		}
+	}
+
+	&__title {
+		color: $main-white;
+		font-size: 4.5rem;
+		font-weight: 600;
+		line-height: 1;
+
+		@media screen and (max-width: $desktop) {
+			font-size: 2.25rem;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			margin-bottom: 2px;
+		}
+	}
+
+	&__text {
+		width: 550px;
+		margin-bottom: 1.5rem;
+		color: $main-white;
+		font-size: 1rem;
+		line-height: 1.2;
+		letter-spacing: -0.16px;
+
+		@media screen and (max-width: $big-tablet) {
+			width: 92%;
+			margin-bottom: 1rem;
+			font-size: 0.875rem;
+			letter-spacing: -0.14px;
+		}
+	}
+}
+
+//accordion
+#accordeon {
+	width: 350px;
+	border: 10px solid #fff;
+	box-shadow: 0 0 10px grey;
+	margin: 10px;
+}
+
+.acc-item {
+	border-bottom: 1px solid #c0c0c0;
+}
+
+.acc-head {
+	padding: 5px 10px;
+	background: #c0c0c0;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.toggle-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+	color: blue;
+	margin-left: 10px;
+}
+
+.acc-body {
+	padding: 10px;
+	display: none;
+}
+//accordion
+
+.expectation {
+	padding: 4rem 0;
+	background-color: $second-white;
+
+	@media screen and (max-width: $big-tablet) {
+		padding: 2.5rem 0;
+	}
+
+	&-wrapper {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		gap: 12rem;
+
+		@media screen and (max-width: 1280px) {
+			gap: 1.25rem;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			display: block;
+		}
+	}
+
+	&__title {
+		width: 31.875rem;
+		margin: 3.5rem 0 1.5rem 0;
+		color: $grey90;
+		font-size: 2.5rem;
+		font-weight: 600;
+		line-height: 1;
+
+		@media screen and (max-width: $desktop) {
+			margin: 2rem 0 1rem 0;
+			width: 22.5rem;
+			font-size: 1.75rem;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			width: 100%;
+		}
+	}
+
+	&__subtitle {
+		width: 31.875rem;
+		color: $grey90;
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: -0.16px;
+
+		@media screen and (max-width: $desktop) {
+			width: 22.5rem;
+			font-size: 0.875rem;
+			letter-spacing: -0.14px;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			width: 100%;
+		}
+	}
+
+	&__list {
+		width: 31.875rem;
+		margin-bottom: 1rem;
+		color: $grey90;
+		line-height: 1.2;
+		letter-spacing: -0.16px;
+
+		@media screen and (max-width: $desktop) {
+			width: 22.5rem;
+			font-size: 0.875rem;
+			letter-spacing: -0.14px;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			width: 100%;
+		}
+	}
+
+	&__item {
+		margin: 0 0 0.5rem 1.5rem;
+		position: relative;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0.5rem;
+			left: -14px;
+			display: inline-block;
+			width: 0.25rem;
+			height: 0.25rem;
+			background-color: $grey90;
+			border-radius: 50%;
+		}
+	}
+
+	&__img {
+		height: 100%;
+		border-radius: $card-border-radius;
+		overflow: hidden;
+		object-fit: cover;
+
+		@media screen and (max-width: $big-tablet) {
+			height: 25.375rem;
+		}
+	}
+}
+
+.stages {
+	padding: 4rem 0 8rem 0;
+
+	@media screen and (max-width: $big-tablet) {
+		padding: 2.5rem 0 6.5rem 0;
+	}
+
+	&-wrapper {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 13.625rem;
+
+		@media screen and (max-width: 1120px) {
+			gap: 2rem;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			margin-bottom: 11.75rem;
+			flex-direction: column;
+			gap: 0;
+		}
+	}
+
+	&-color {
+		color: rgba(103, 107, 112, 0.31);
+	}
+
+	&__title {
+		width: 28.75rem;
+		font-size: 3rem;
+		font-weight: 600;
+		line-height: 1;
+
+		@media screen and (max-width: $big-tablet) {
+			width: fit-content;
+			font-size: 1.75rem;
+		}
+
+		@media screen and (max-width: $mobile) {
+			font-size: 1.4rem;
+		}
+	}
+
+	&__text {
+		margin-right: 5.625rem;
+		width: 29.5rem;
+		font-size: 1rem;
+		line-height: 1.2;
+		letter-spacing: -0.16px;
+
+		@media screen and (max-width: 1120px) {
+			margin-right: 0;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			margin-top: 1rem;
+			font-size: 0.875rem;
+			letter-spacing: -0.14px;
+		}
+
+		@media screen and (max-width: $tablet) {
+			width: fit-content;
+		}
+	}
 }

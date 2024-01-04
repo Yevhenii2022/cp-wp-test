@@ -6,40 +6,106 @@ get_header();
 ?>
 
 <main>
-
-  <section class="isoo">
+  <?php $banner_image = get_field('banner_iso');  ?>
+  <section class="isobanner" style="background-image: url('<?php echo esc_url($banner_image['url']); ?>');">
     <div class="container">
+      <div class="isobanner-wrapper">
+        <h1 class="isobanner__title">Сертифікація</h1>
+        <span class="isobanner__title"><?php the_field('iso_number'); ?></span>
+      </div>
+      <p class="isobanner__text"><?php the_field('banner_text'); ?></p>
 
-      <?php
-      // Виведення заголовка поста
-      the_title('<h1>', '</h1>');
-
-      // Отримання значення поля "banner_iso"
-      $banner_image = get_field('banner_iso');
-
-      // Отримання значення поля "iso_number"
-      $iso_number = get_field('iso_number');
-
-      // Виведення мініатюри
-      if ($banner_image) {
-        echo '<img src="' . esc_url($banner_image['url']) . '" alt="' . esc_attr($banner_image['alt']) . '" />';
-      }
-
-      // Виведення тексту з поля "iso_number"
-      if ($iso_number) {
-        echo '<p>' . esc_html($iso_number) . '</p>';
-      }
-
-      // Виведення вмісту поста
-      while (have_posts()) : the_post();
-        the_content();
-      endwhile;
-      ?>
-
+      <div class="isobanner-wrapper">
+        <a href="#form" class="button">
+          <?php the_field('banner_btn'); ?>
+          <svg class="arrow-icon stroke">
+            <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
+          </svg>
+        </a>
+        <button id="toggleAccordion">Читати більше</button>
+      </div>
     </div>
   </section>
 
 
+  <!-- accordeon -->
+  <div class="container">
+    <div id="accordeon" style="display:none;">
+      <div class="acc-item">
+        <div class="acc-head">
+          Заголовок 1
+        </div>
+        <button class="toggle-btn">+</button>
+        <div class="acc-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head">
+          Заголовок 2
+        </div>
+        <button class="toggle-btn">+</button>
+        <div class="acc-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
+        </div>
+      </div>
+      <div class="acc-item">
+        <div class="acc-head">
+          Заголовок 3
+        </div>
+        <button class="toggle-btn">+</button>
+        <div class="acc-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- accordeon -->
+
+
+  <section class="expectation">
+    <div class="container">
+
+      <div class="expectation-wrapper">
+        <img class="expectation__img" src="https://test4.cursorpointer.agency/wp-content/uploads/2024/01/about.webp" alt="conversation at the table">
+        <div>
+          <h2 class="expectation__title"><?php the_field('expectation_title'); ?></h2>
+
+          <?php
+          $expectation_list = get_field('expectation_list');
+          if ($expectation_list) {
+            echo '<ul class="expectation__list">';
+
+            foreach ($expectation_list as $item) {
+              $expectation_item = $item['expectation_item'];
+              if ($expectation_item) {
+                echo '<li class="expectation__item"><p>' . esc_html($expectation_item) . '</p></li>';
+              }
+            }
+            echo '</ul>';
+          }
+          ?>
+
+          <h3 class="expectation__subtitle"><?php the_field('expectation_subtitle'); ?></h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stages">
+    <div class="container">
+      <div class="stages-wrapper">
+        <div>
+          <h2 class="stages__title stages-color">Етапи сертифікації</h2>
+          <h2 class="stages__title"><?php the_field('iso_number'); ?></h2>
+        </div>
+        <p class="stages__text"><?php the_field('stages_text'); ?></p>
+      </div>
+
+      <?php get_template_part('template-parts/tooltip'); ?>
+
+    </div>
+  </section>
 
 </main>
 
