@@ -5,6 +5,9 @@
         height: 21rem;
         background: $dark-gradient;
         position: relative;
+        @media screen and (max-width: $tablet) {
+            height: 13.5rem;
+       }
     }
 
     &__title{
@@ -17,11 +20,17 @@
         top: 54%;
         left: 3%;
         letter-spacing: 0.1rem;
+        @media screen and (max-width: $big-tablet) {
+             font-size: 2.25rem;
+             top: 65%;
+             left: 4%;
+             letter-spacing: .08rem;
+        }
+       
     }
 
     &__wrapper{
         margin-top: 4rem;
-        margin-bottom: 4rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
@@ -31,6 +40,7 @@
         }
         @media screen and (max-width: $tablet) {
             grid-template-columns: repeat(1, 1fr);
+            margin-top: 2.5rem;
         }
     }
 
@@ -42,11 +52,11 @@
     margin-top: 4rem;
     margin-bottom: 4rem;
     font-weight: 500;
-    @media screen and (max-width: $desktop) {
-      
-    }
+    
     @media screen and (max-width: $tablet) {
-      
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        font-weight: 500;
     }
   }
   

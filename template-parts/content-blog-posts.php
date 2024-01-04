@@ -51,18 +51,7 @@ get_header();
           }
             wp_reset_postdata(); 
         ?> 
-         
-      
    </div>
-      <!-- <div class="blog__share">
-         <p class="blog__text"></p>
-         <ul class="blog__list">
-            <li class="blog__link"></li>
-            <li class="blog__link"></li>
-            <li class="blog__link"></li>
-         </ul>
-      </div> -->
-  
 </section>
 
 

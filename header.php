@@ -22,6 +22,11 @@
                 </div>
                 <div class="header__menu" id="">
                     <div class="header__nav">
+                        <div class="header__sertificates">Сертифікати
+                            <a class="header__sertificates-btn" href="" target="_blank" aria-label="read more"><svg class="header__sertificates-icon" width="56px" height="56px">
+                                <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
+                            </svg></a>
+                        </div>
                         <div class="header__menu-wrapper">
                             <?php wp_nav_menu([
                                     'theme_location'       => 'header',
