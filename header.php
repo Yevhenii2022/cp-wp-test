@@ -42,11 +42,12 @@
                                <?php endwhile; ?>
                             <?php endif; ?>
                             </ul>
-                            <div class="header__last">
-                                <?php get_template_part('template-parts/last-part'); ?>
-                            </div>
+                           
                             
                          </div>
+                          <div class="header__last">
+                                <?php get_template_part('template-parts/last-part'); ?>
+                            </div>
                     <a class="header__phone" href="tel:+<?php the_field('header_phone', 'option'); ?>" >
                         <?php the_field('header_phone', 'option'); ?></a>
                 </div>

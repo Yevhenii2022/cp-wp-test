@@ -21,8 +21,7 @@
                     <p class="post__social-text"><?php the_field('icon_text'); ?></p>
                     <ul class="post__social-items">
                         <li class="post__social-item"><a class="post__social-link" href="https://www.youtube.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" aria-label="Share on youtube"><svg class="post__social-icon" width="56px" height="56px">
-                                <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#youtube
-                                "></use>
+                                <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#youtube"></use>
                             </svg></a></li>
                         <li class="post__social-item"><a class="post__social-link" href="https://www.instagram.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" aria-label="Share on instagram"><svg class="post__social-icon" width="56px" height="56px">
                                 <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#instagram"></use>
