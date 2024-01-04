@@ -25,26 +25,43 @@
 		z-index: 100;
 	}
 
+	&__sertificates{
+		margin-right: 1.5rem;
+
+
+	}
+
+	&__sertificates-icon{
+		width: 1rem;
+		height: 1rem;
+		stroke: $main-white;
+	}
     &__menu{
 		display: flex;
 		color:$main-white;
 	}
 
     &__menu-wrapper{
+		margin-right: 1px;
+
 		@media screen and (max-width: $desktop) {
-		    border-radius: 0px 0px 9px 9px;
+		    border-radius: 0px 0px 0.56rem 0.56rem ;
 			background: $dark-gradient;
 			height: fit-content;
 			width: 100%;
 			top: 0px;
             position: fixed;
 			padding: 0 2rem;
-
-			@media screen and (max-width: $tablet) {
-				padding: 0 1rem;
-			}
+            height: 95%;
+			flex: 1;
+		}
+			
+		@media screen and (max-width: $tablet) {
+			padding: 0 1rem;
+			margin-right: 0px;
 		}
 	}
+
 
 	&__nav{
 		display: flex;
@@ -53,7 +70,7 @@
 			display: none;
 			position: fixed;
 			width: 100%;
-			top: 65px;
+			top: 4rem;
 			bottom: 0;
 			left:0;
 			right: 0;
@@ -90,6 +107,7 @@
 	}
 
 	&__phone{
+		letter-spacing: 0.02rem;
 		@media screen and (max-width: $desktop) {
 			display: none;
 		}
@@ -115,15 +133,22 @@
 
 	&__last{
 		display: none;
-		position: relative;
-
+		padding: 0 2.25rem;
+		
 		@media screen and (max-width: $desktop) {
 			display: block;
+			margin-top: auto;
+			padding: 0 1rem;
+			margin-bottom: 3%;
+		}
+		@media screen and (max-width: $big-tablet) {
+			margin-bottom: 4%;
+		}
+		@media screen and (max-width: $tablet) {
+			margin-bottom: 1%;
 		}
 
 	}
-
-	
 }
 .header .custom-logo-link img {
    	width: 6.75rem;
@@ -137,8 +162,11 @@
 
 .open{
 	@media screen and (max-width: $desktop) {
-		display: flex;
 		background: $second-white;
+		display: flex;
+		flex-direction: column;
+		min-height: 95vh;
+		margin: 0;
 	}
 	
 }
@@ -165,7 +193,7 @@
 			
 .header__list li.active a{
 				opacity: 0.3;
-				 color: red($color: #000000);
+				color: red($color: #000000);
 			}
 
 	
@@ -192,6 +220,7 @@
 			padding-right: 2.5rem;
 			font-size: 1.2rem;
 			color: $main-white;
+			letter-spacing: 0.1rem;
 			@media screen and (max-width: $tablet){
 				padding-right: 2rem;
 				font-size: 0.8rem;

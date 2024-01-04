@@ -31,11 +31,14 @@
                 </div>
             </div>
         </div>
-        <div class="footer__last">
-            <?php get_template_part('template-parts/last-part'); ?>
-        </div>
+       
     </div>
 </footer>
+<div class="footer__last">
+    <div class="container">
+            <?php get_template_part('template-parts/last-part'); ?>
+    </div>        
+</div>
 <?php wp_footer(); ?>
 </body>
 
