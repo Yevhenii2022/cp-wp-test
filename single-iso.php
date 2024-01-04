@@ -31,7 +31,7 @@ get_header();
     <div class="container">
 
       <div class="expectation-wrapper">
-        <img class="expectation__img" src="http://cp-wp-test/wp-content/uploads/2024/01/about.webp" alt="conversation at the table">
+        <img class="expectation__img" src="https://test4.cursorpointer.agency/wp-content/uploads/2024/01/about.webp" alt="conversation at the table">
         <div>
           <h2 class="expectation__title"><?php the_field('expectation_title'); ?></h2>
 
@@ -53,12 +53,23 @@ get_header();
           <h3 class="expectation__subtitle"><?php the_field('expectation_subtitle'); ?></h3>
         </div>
       </div>
-
-
     </div>
   </section>
 
+  <section class="stages">
+    <div class="container">
+      <div class="stages-wrapper">
+        <div>
+          <h2 class="stages__title stages-color">Етапи сертифікації</h2>
+          <h2 class="stages__title"><?php the_field('iso_number'); ?></h2>
+        </div>
+        <p class="stages__text"><?php the_field('stages_text'); ?></p>
+      </div>
 
+      <?php get_template_part('template-parts/tooltip'); ?>
+
+    </div>
+  </section>
 
 </main>
 
