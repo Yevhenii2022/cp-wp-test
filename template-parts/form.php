@@ -1,4 +1,4 @@
-    <section>
+    <section id="form">
       <h2 class="form__title"><?php the_field('form_title', 'option'); ?></h2>
       <?php
       $form = get_field('form', 'option');
