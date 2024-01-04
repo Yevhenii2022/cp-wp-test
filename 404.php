@@ -12,8 +12,19 @@ get_header();
 ?>
 
 <main>
-	<section>
-		<h1><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'cp-wp-test'); ?></h1>
+	<section style="background-color: #acbdec; padding: 100px">
+		<div class="container">
+			<h1 style="margin-bottom: 30px"><?php esc_html_e('На жаль, цю сторінку не знайдено.', 'cp-wp-test'); ?></h1>
+
+			<div>
+				<a href="<?php echo get_home_url(); ?>" class="button">
+					Повернутися на головну сторінку
+					<svg class="arrow-icon stroke">
+						<use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
+					</svg>
+				</a>
+			</div>
+		</div>
 	</section>
 </main>
 

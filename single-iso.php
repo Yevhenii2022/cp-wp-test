@@ -6,35 +6,54 @@ get_header();
 ?>
 
 <main>
+  <?php $banner_image = get_field('banner_iso');  ?>
+  <section class="isobanner" style="background-image: url('<?php echo esc_url($banner_image['url']); ?>');">
+    <div class="container">
+      <div class="isobanner-wrapper">
+        <h1 class="isobanner__title">Сертифікація</h1>
+        <span class="isobanner__title"><?php the_field('iso_number'); ?></span>
+      </div>
+      <p class="isobanner__text"><?php the_field('banner_text'); ?></p>
 
-  <section class="isoo">
+      <div class="isobanner-wrapper">
+        <a href="#form" class="button">
+          <?php the_field('banner_btn'); ?>
+          <svg class="arrow-icon stroke">
+            <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="expectation">
     <div class="container">
 
-      <?php
-      // Виведення заголовка поста
-      the_title('<h1>', '</h1>');
+      <div class="expectation-wrapper">
+        <img class="expectation__img" src="http://cp-wp-test/wp-content/uploads/2024/01/about.webp" alt="conversation at the table">
+        <div>
+          <h2 class="expectation__title"><?php the_field('expectation_title'); ?></h2>
 
-      // Отримання значення поля "banner_iso"
-      $banner_image = get_field('banner_iso');
+          <?php
+          $expectation_list = get_field('expectation_list');
+          if ($expectation_list) {
+            echo '<ul class="expectation__list">';
 
-      // Отримання значення поля "iso_number"
-      $iso_number = get_field('iso_number');
+            foreach ($expectation_list as $item) {
+              $expectation_item = $item['expectation_item'];
+              if ($expectation_item) {
+                echo '<li class="expectation__item"><p>' . esc_html($expectation_item) . '</p></li>';
+              }
+            }
+            echo '</ul>';
+          }
+          ?>
 
-      // Виведення мініатюри
-      if ($banner_image) {
-        echo '<img src="' . esc_url($banner_image['url']) . '" alt="' . esc_attr($banner_image['alt']) . '" />';
-      }
+          <h3 class="expectation__subtitle"><?php the_field('expectation_subtitle'); ?></h3>
+        </div>
+      </div>
 
-      // Виведення тексту з поля "iso_number"
-      if ($iso_number) {
-        echo '<p>' . esc_html($iso_number) . '</p>';
-      }
-
-      // Виведення вмісту поста
-      while (have_posts()) : the_post();
-        the_content();
-      endwhile;
-      ?>
 
     </div>
   </section>
