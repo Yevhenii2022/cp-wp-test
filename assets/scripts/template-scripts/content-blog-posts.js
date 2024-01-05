@@ -1,0 +1,1 @@
+function toggleArrowRotation(){document.querySelector(".arrow").classList.toggle("rotate")}document.getElementById("postBlock").onclick=function(){toggleArrowRotation()};
