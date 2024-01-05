@@ -6,12 +6,12 @@
 	color: $main-white;
 
 	@media screen and (max-width: $big-tablet) {
-		padding: 10rem 0;
+		padding: 10rem 0 2.5rem 0;
 	}
 
-	&-wraper {
+	&-wrapper {
 		display: flex;
-		gap: 8.25rem;
+		gap: 8rem;
 
 		@media screen and (max-width: 1120px) {
 			gap: 5rem;
@@ -27,11 +27,6 @@
 		}
 	}
 
-	&-flex {
-		flex: 1;
-		flex-basis: 50%;
-	}
-
 	&__img {
 		height: 100%;
 		border-radius: $card-border-radius;
@@ -39,11 +34,11 @@
 		object-fit: cover;
 
 		@media screen and (max-width: $big-tablet) {
-			height: 25.375rem;
+			height: 20rem;
 		}
 
 		@media screen and (max-width: $mobile) {
-			height: 18.75rem;
+			height: 12.75rem;
 		}
 	}
 
@@ -66,37 +61,128 @@
 		}
 	}
 
+	&__subtitle {
+		margin: 3.12rem 0 1rem 0;
+		font-size: 1.25rem;
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: -0.2px;
+
+		@media screen and (max-width: $big-tablet) {
+			margin: 2rem 0 0.5rem 0;
+			font-size: 1rem;
+			letter-spacing: -0.16px;
+		}
+	}
+
 	&__text {
-		margin-bottom: 2.5rem;
 		font-size: 1rem;
 		line-height: 1.2;
 		letter-spacing: -0.16px;
 
 		@media screen and (max-width: $big-tablet) {
-			margin-bottom: 1.5rem;
 			font-size: 0.875rem;
 			letter-spacing: -0.14px;
 		}
+	}
+}
 
-		&:nth-child(2) {
-			margin-bottom: 1rem;
+.about-fact {
+	padding: 4rem 0;
+	background-color: $second-white;
+
+	@media screen and (max-width: $big-tablet) {
+		padding: 2.5rem 0;
+	}
+
+	&-flex {
+		display: flex;
+		gap: 1rem;
+
+		@media screen and (max-width: $big-tablet) {
+			flex-direction: column;
 		}
 	}
 
-	&-margin {
-		margin-bottom: 20rem;
-		border: 1px solid rgba(43, 41, 41, 0.2);
+	&-color {
+		margin-left: 0.625rem;
+		color: rgba(103, 107, 112, 0.31);
 
-		@media screen and (max-width: 1120px) {
-			margin-bottom: 12.5rem;
+		@media screen and (max-width: 1180px) {
+			margin-left: 0;
 		}
+	}
+
+	&-text {
+		display: flex;
+
+		@media screen and (max-width: 1180px) {
+			flex-direction: column;
+		}
+	}
+
+	&-wrapper {
+		display: flex;
+		gap: 1rem;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 50%;
+		height: 19rem;
+		padding: 1.5rem 1.5rem 2rem 1.5rem;
+		border: 1px solid rgba(102, 107, 113, 0.2);
+		border-radius: $card-border-radius;
 
 		@media screen and (max-width: $desktop) {
-			margin-bottom: 6.25rem;
+			height: auto;
 		}
 
 		@media screen and (max-width: $big-tablet) {
-			margin-bottom: 0;
+			width: 100%;
+			gap: 5rem;
+			height: auto;
+			padding: 1rem 1rem 1.125rem 1rem;
+		}
+	}
+
+	&__title {
+		font-size: 2.5rem;
+		font-weight: 600;
+		line-height: 1;
+
+		@media screen and (max-width: $desktop) {
+			font-size: 2rem;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			font-size: 1.75rem;
+		}
+	}
+
+	&__subtitle {
+		margin: 3.12rem 0 1rem 0;
+		font-size: 1.25rem;
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: -0.2px;
+
+		@media screen and (max-width: $desktop) {
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			margin: 2rem 0 0.5rem 0;
+			font-size: 1rem;
+			letter-spacing: -0.16px;
+		}
+	}
+
+	&__text {
+		font-size: 1rem;
+		line-height: 1.2;
+		letter-spacing: -0.16px;
+
+		@media screen and (max-width: $big-tablet) {
+			font-size: 0.875rem;
+			letter-spacing: -0.14px;
 		}
 	}
 }
