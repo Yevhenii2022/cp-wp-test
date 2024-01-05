@@ -99,7 +99,7 @@ get_header();
         <h2 class="about__title"><?php echo $modified_text; ?></h2>
         <p class="about__text"><?php the_field('about_text_first'); ?></p>
         <p class="about__text"><?php the_field('about_text_second'); ?></p>
-        <a href="#" class="button  about-margin">
+        <a href="<?php echo esc_attr(get_field('about_btn_link')); ?>" class="button  about-margin">
           <?php the_field('about_btn_text'); ?>
           <svg class="arrow-icon stroke">
             <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
@@ -125,73 +125,70 @@ get_header();
   </section>
 
   <section class="team">
-    <div class="container">
-
+    <div class="team-container">
 
       <?php if (have_rows('team_slider')) : ?>
-
         <div class="swiper-flex">
-
-          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+          <div class="swiper-flex__quotes">“</div>
+          <div class="swiper mySwiper3">
             <div class="swiper-wrapper">
 
               <?php while (have_rows('team_slider')) : the_row();
-                $img = get_sub_field('team_img');
                 $quote = get_sub_field('quote');
                 $member = get_sub_field('team_member');
                 $position = get_sub_field('position');
               ?>
 
-                <div class="swiper-slide">
-                  <div class="swiper-img-bg">
-                    <img src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
-                  </div>
-
-
-                  <div class="slider-text">
-                    <h3><?php echo $quote; ?></h3>
-                    <p><?php echo $member; ?></p>
-                    <p><?php echo $position; ?></p>
-                  </div>
-
+                <div class="swiper-slide slider-text">
+                  <h3 class="slider-text__quote"><?php echo $quote; ?></h3>
+                  <p class="slider-text__member"><?php echo $member; ?></p>
+                  <p class="slider-text__position"><?php echo $position; ?></p>
                 </div>
 
               <?php endwhile; ?>
-
             </div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
           </div>
-
-
-          <div thumbsSlider="" class="swiper mySwiper">
+          <div class="swiper mySwiper">
             <div class="swiper-wrapper swiper-flex-img">
-
 
               <?php while (have_rows('team_slider')) : the_row();
                 $img = get_sub_field('team_img');
               ?>
 
-                <div class="swiper-slide ">
-                  <div class="swiper-img-sm">
+                <div class="swiper-slide swiper-img__wrapper">
+                  <div class="swiper-empty__wrap"></div>
+                  <div class="swiper-img-sm element-animation">
                     <img src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
                   </div>
                 </div>
-
               <?php endwhile; ?>
-
             </div>
           </div>
+          <div class="swiper mySwiper2">
+            <div class="swiper-wrapper">
 
-
+              <?php while (have_rows('team_slider')) : the_row();
+                $img = get_sub_field('team_img');
+              ?>
+                <div class="swiper-slide">
+                  <div class="swiper-img-bg">
+                    <img src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
+                  </div>
+                </div>
+              <?php endwhile; ?>
+            </div>
+          </div>
         </div>
-
       <?php endif; ?>
+      <div class="swiper_pagination custom-pagination">
+        <div class="pagination-wrap">
+          <div class="custom-prev-icon"></div>
+          <div class="custom-next-icon"></div>
+        </div>
+      </div>
+    </div>
 
-
-
-
+    <div class="container">
       <div class="team-flex">
         <h3 class="team__title"><?php the_field('team_title'); ?></h3>
         <p class="team__text"><?php the_field('work_text'); ?></p>
@@ -214,7 +211,6 @@ get_header();
         }
         ?>
       </div>
-
     </div>
   </section>
 
