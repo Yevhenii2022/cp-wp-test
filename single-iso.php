@@ -40,10 +40,12 @@ get_header();
           $accordion_text = $accordion_item['accordion_text'];
       ?>
           <div class="acc-item">
-            <h3 class="acc-head">
-              <?php echo esc_html($accordion_title); ?>
-            </h3>
-            <button class="toggle-btn">+</button>
+            <div class="acc-wrapper">
+              <h3 class="acc-head">
+                <?php echo esc_html($accordion_title); ?>
+              </h3>
+              <button class="toggle-btn">+</button>
+            </div>
             <p class="acc-body">
               <?php echo esc_html($accordion_text); ?>
             </p>

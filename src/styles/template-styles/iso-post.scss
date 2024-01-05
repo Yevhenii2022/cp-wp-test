@@ -67,46 +67,75 @@
 
 //accordion
 #accordeon {
-	width: 350px;
-	border: 10px solid #fff;
-	box-shadow: 0 0 10px grey;
-	margin: 10px;
-}
+	width: 100%;
+	padding: 3rem 0 5rem 0;
 
-.acc-item {
-	border-bottom: 1px solid #c0c0c0;
-}
-
-.acc-head {
-	padding: 5px 10px;
-	background: #c0c0c0;
-	cursor: pointer;
-	display: inline-block;
-}
-
-.accordeon-btn {
-	margin: 30px 30px 0 0;
-	color: $main-white;
-	transition: scale $transition-function;
-
-	&:hover,
-	&:focus {
-		scale: 1.03;
+	@media screen and (max-width: $big-tablet) {
+		padding: 0.6875rem 0 2.5rem 0;
 	}
 }
 
+.acc-item {
+	border-bottom: 1px solid rgba(102, 107, 113, 0.2);
+}
+
+.acc-head {
+	margin: 2rem 0 1rem 0;
+	display: inline-block;
+	font-size: 1.5rem;
+	font-weight: 600;
+	line-height: 1;
+
+	@media screen and (max-width: $big-tablet) {
+		width: 95%;
+		margin: 1.8125rem 0 1rem 0;
+		font-size: 1.125rem;
+	}
+}
+
+.acc-wrapper {
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+	justify-content: space-between;
+
+	@media screen and (max-width: $big-tablet) {
+		gap: 1rem;
+	}
+}
+
+.accordeon-btn {
+	margin: 1.875rem 1.875rem 0 0;
+	color: $main-white;
+}
+
 .toggle-btn {
-	background: none;
-	border: none;
+	margin-top: 1rem;
+	width: 1.875rem;
 	cursor: pointer;
-	font-size: 16px;
-	color: blue;
-	margin-left: 10px;
+	font-size: 1.875rem;
+	color: $grey90;
+
+	@media screen and (max-width: $big-tablet) {
+		margin-top: 0.75rem;
+		font-size: 1.5rem;
+	}
 }
 
 .acc-body {
-	padding: 10px;
+	margin-bottom: 2rem;
+	width: 70%;
 	display: none;
+	font-size: 1rem;
+	line-height: 1.2;
+	letter-spacing: -0.16px;
+
+	@media screen and (max-width: $big-tablet) {
+		width: 90%;
+		margin-bottom: 1.5rem;
+		font-size: 0.875rem;
+		letter-spacing: -0.14px;
+	}
 }
 //accordion
 
