@@ -99,7 +99,7 @@ get_header();
         <h2 class="about__title"><?php echo $modified_text; ?></h2>
         <p class="about__text"><?php the_field('about_text_first'); ?></p>
         <p class="about__text"><?php the_field('about_text_second'); ?></p>
-        <a href="#" class="button  about-margin">
+        <a href="<?php echo esc_attr(get_field('about_btn_link')); ?>" class="button  about-margin">
           <?php the_field('about_btn_text'); ?>
           <svg class="arrow-icon stroke">
             <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
@@ -128,11 +128,8 @@ get_header();
     <div class="team-container">
 
       <?php if (have_rows('team_slider')) : ?>
-
         <div class="swiper-flex">
-
           <div class="swiper-flex__quotes">“</div>
-
           <div class="swiper mySwiper3">
             <div class="swiper-wrapper">
 
@@ -150,9 +147,7 @@ get_header();
 
               <?php endwhile; ?>
             </div>
-
           </div>
-
           <div class="swiper mySwiper">
             <div class="swiper-wrapper swiper-flex-img">
 
@@ -166,34 +161,24 @@ get_header();
                     <img src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
                   </div>
                 </div>
-
               <?php endwhile; ?>
-
             </div>
           </div>
-
           <div class="swiper mySwiper2">
             <div class="swiper-wrapper">
 
               <?php while (have_rows('team_slider')) : the_row();
                 $img = get_sub_field('team_img');
               ?>
-
                 <div class="swiper-slide">
                   <div class="swiper-img-bg">
                     <img src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
                   </div>
-
                 </div>
-
               <?php endwhile; ?>
-
             </div>
-
           </div>
-
         </div>
-
       <?php endif; ?>
       <div class="swiper_pagination custom-pagination">
         <div class="pagination-wrap">
@@ -227,10 +212,7 @@ get_header();
         ?>
       </div>
     </div>
-
   </section>
-
-
 
   <section class="map">
     <div class="container map-flex">
