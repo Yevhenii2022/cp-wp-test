@@ -25,7 +25,10 @@
                         <div class="header__menu-wrapper">
                              <button class="header__submenu-button" id="toggleButton">
                                 <?php the_field('submenu_button', 'option'); ?> 
-                                <span id="toggleIcon"> ᐯ </span></button>
+                                <svg id="toggleIcon"class="header__submenu-icon" width="56px" height="56px">
+                                    <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow-down"></use>
+                                </svg>
+                            </button>
                              
                              <div class="header__submenu-wrapper" id="container">
                              
