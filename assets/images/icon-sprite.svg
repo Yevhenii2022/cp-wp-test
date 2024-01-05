@@ -33,4 +33,11 @@
 </symbol>
 </defs>
 
+
+<symbol id="arrow-down" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 1321315160">
+<path id="Vector" d="M9 5L5 1L1 5" stroke="white" style="stroke:white;stroke-opacity:1;" stroke-width="0.733333" stroke-linecap="square" stroke-linejoin="round"/>
+</g>
+
+
 </svg>
