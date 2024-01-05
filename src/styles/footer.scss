@@ -9,33 +9,44 @@
 	&__content {
 		display: flex;
 		padding: 4rem 0;
-		gap: 17%;
+		gap: 3rem;
+		width: 100%;
+		justify-content: space-between;
 		@media screen and (max-width: $desktop) {
-			gap: 12%;
+			gap: 3rem;
 		}
 		@media screen and (max-width: $big-tablet) {
 			flex-direction: column;
 			gap: 0;
-			padding: 2.5rem;
+			padding: 2.5rem 0;
 		}
 		@media screen and (max-width: $tablet) {
 			padding: 2.5rem 0;
 		}
     }
 
-
+    &__form{
+		width: 50%;
+		
+		@media screen and (max-width: $big-tablet) {
+			width: 100%;
+		}
+    }
 	&__wrapper {
 		display: flex;
 		flex-direction: column;
-
+		width: 50%;
+		max-width: 35rem;
 		@media screen and (max-width: $big-tablet) {
 			margin-top: 4rem;
+			width: 100%;
+			max-width: none;
 		}
 	}
 
 	&__image{
 		height: 16.6875rem;
-		width: 35rem;
+		
 		border-radius: 0.375rem;
 		&>img{
 			width: 100%;
@@ -43,8 +54,7 @@
 			object-fit: cover;
 			border-radius: 0.375rem;
 		}
-		@media screen and (max-width: $tablet) {
-			width: 21.375rem;
+		@media screen and (max-width: $tablet) {			
 			height: 10.1875rem;
 		}
 	}

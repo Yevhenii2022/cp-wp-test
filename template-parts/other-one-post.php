@@ -1,8 +1,8 @@
-<article class="one-post">
-    <div class="one-post__image">
-        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-            <?php the_post_thumbnail(); ?>
-        
+<article class="one-post" id="postBlock">
+    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+            <div class="one-post__image">
+                <?php the_post_thumbnail(); ?>
+            </div>
             <p class="one-post__time"><?php the_time('d.m.y'); ?></p>
             <div class="one-post__bottom">
                 <h3 class="one-post__title"><?php the_title(); ?></h3>
@@ -12,7 +12,6 @@
                     </svg>
                 </div>
             </div>
-        </a>
-    </div>
-
+       
+    </a>
 </article>

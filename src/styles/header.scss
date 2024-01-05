@@ -3,6 +3,7 @@
     width: 100%;
 	border-bottom: 0.05rem solid rgba(255, 255, 255, 0.40);
     z-index: 100;
+	transition: background-color 0.3s ease, position 0.3s ease;
 	
 		@media screen and (max-width: $desktop) {
 			border-bottom: 0;
@@ -30,10 +31,10 @@
 		color:$main-white;
 	}
 
-	&__arrow-icon{
-		width: 1rem;
-		height: 1rem;
-		transform: rotate(0deg);
+	&__submenu-icon{
+		width: 0.6rem;
+		height: 0.6rem;
+		transition: transform 0.3s ease;
 	}
 
     &__menu-wrapper{
@@ -355,12 +356,7 @@
 	}
 }
   
-  #toggleIcon {
-	font-size: 0.5rem;
-  }
-  
-  #container.visible #toggleIcon::after {
-	content: 'ᐯ';
-	transform: rotate(0deg);
-  }
+.header.scrolled{
+	position: fixed;
+}
 
