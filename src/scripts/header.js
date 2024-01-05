@@ -33,22 +33,27 @@ $(document).ready(() => {
   });
   
 
-  let lastScrollTop = 0;
-  let isFixed = false;
+let lastScrollTop = 0;
+
 window.addEventListener('scroll', function () {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  let header = document.querySelector('.header');
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    let header = document.querySelector('.header');
 
-  if (scrollTop > lastScrollTop) {
-    // Скролимо вниз
-    header.classList.remove('scrolled');
-	isFixed = false;
-  } else {
-    // Скролимо вверх
-	if (!isFixed)
-    header.classList.add('scrolled');
+    if (scrollTop > lastScrollTop && scrollTop > 60) {
+		
+		header.classList.add('hidden');
+	} else {
+		
+		header.classList.remove('hidden');
+	}
 
-  }
+    if (scrollTop === 0) {
+       
+        header.classList.remove('scrolled');
+    } else {
+       
+        header.classList.add('scrolled');
+    }
 
-  lastScrollTop = scrollTop;
+    lastScrollTop = scrollTop;
 });

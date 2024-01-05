@@ -1,12 +1,15 @@
 @import "../variables.scss";
 
 .form__title {
-	width: 36rem;
+	max-width: 36rem;
 	margin-bottom: 2.5rem;
 	color: $dark-white;
 	font-size: 3rem;
 	font-weight: 600;
 	line-height: 1;
+	@media screen and (max-width: $desktop) {
+		font-size: 2rem;
+	}
 
 	@media screen and (max-width: $big-tablet) {
 		width: 21.5rem;
