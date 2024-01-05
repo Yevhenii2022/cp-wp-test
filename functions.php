@@ -73,8 +73,7 @@ function cp_wp_test_scripts()
   }
   if (is_singular() && locate_template('template-parts/content-post.php')) {
     wp_enqueue_style('content-post-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-post.css', array('main'));
-    wp_enqueue_script('content-post-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/content-post.js', array(), false, true);
-  }
+   }
 }
 
 function enqueue_custom_assets()
