@@ -19,7 +19,20 @@
             </div>
             <div class="container">
                 <div class="post__content">
-                    <?php the_content(); ?>
+                   <p class="post__introduction"><?php the_field('first_text'); ?></p>
+                   <div class="post__main-text">
+                   <?php if (have_rows('main_text')) : ?>
+                        <?php while (have_rows('main_text')) : the_row();?>
+                            <p class="post__sub-title">
+                            <?php the_sub_field('sub_title'); ?>
+                            </p>
+                            <p class="post__text-paragraph">
+                            <?php the_sub_field('sub_paragraph'); ?>
+                            </p>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+
+                   </div>
                  </div>
             </div>
             <div class="post__border"></div>
