@@ -15,53 +15,49 @@ get_header();
       </div>
       <p class="isobanner__text"><?php the_field('banner_text'); ?></p>
 
-      <div class="isobanner-wrapper">
+      <div class="isobanner-flex">
         <a href="#form" class="button">
           <?php the_field('banner_btn'); ?>
           <svg class="arrow-icon stroke">
             <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
           </svg>
         </a>
-        <button id="toggleAccordion">Читати більше</button>
+        <button id="toggleAccordion" class="accordeon-btn">Читати більше</button>
       </div>
     </div>
   </section>
 
-
   <!-- accordeon -->
   <div class="container">
     <div id="accordeon" style="display:none;">
-      <div class="acc-item">
-        <div class="acc-head">
-          Заголовок 1
-        </div>
-        <button class="toggle-btn">+</button>
-        <div class="acc-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
-        </div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-head">
-          Заголовок 2
-        </div>
-        <button class="toggle-btn">+</button>
-        <div class="acc-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
-        </div>
-      </div>
-      <div class="acc-item">
-        <div class="acc-head">
-          Заголовок 3
-        </div>
-        <button class="toggle-btn">+</button>
-        <div class="acc-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum saepe ex nesciunt, quidem quis illo cupiditate, quod maxime. Tenetur, ex quos. Magnam quasi iure facere minus velit voluptate accusamus hic!
-        </div>
-      </div>
+
+      <?php
+      $accordion_items = get_field('accordion');
+
+      if ($accordion_items) :
+        foreach ($accordion_items as $accordion_item) :
+          $accordion_title = $accordion_item['accordion_title'];
+          $accordion_text = $accordion_item['accordion_text'];
+      ?>
+          <div class="acc-item">
+            <div class="acc-wrapper">
+              <h3 class="acc-head">
+                <?php echo esc_html($accordion_title); ?>
+              </h3>
+              <button class="toggle-btn">+</button>
+            </div>
+            <p class="acc-body">
+              <?php echo esc_html($accordion_text); ?>
+            </p>
+          </div>
+      <?php
+        endforeach;
+      endif;
+      ?>
+
     </div>
   </div>
   <!-- accordeon -->
-
 
   <section class="expectation">
     <div class="container">
