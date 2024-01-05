@@ -125,21 +125,58 @@ get_header();
   </section>
 
   <section class="team">
-    <div class="container">
-
+    <div class="team-container">
 
       <?php if (have_rows('team_slider')) : ?>
 
         <div class="swiper-flex">
 
-          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+          <div class="swiper-flex__quotes">“</div>
+
+          <div class="swiper mySwiper3">
+            <div class="swiper-wrapper">
+
+              <?php while (have_rows('team_slider')) : the_row();
+                $quote = get_sub_field('quote');
+                $member = get_sub_field('team_member');
+                $position = get_sub_field('position');
+              ?>
+
+                <div class="swiper-slide slider-text">
+                  <h3 class="slider-text__quote"><?php echo $quote; ?></h3>
+                  <p class="slider-text__member"><?php echo $member; ?></p>
+                  <p class="slider-text__position"><?php echo $position; ?></p>
+                </div>
+
+              <?php endwhile; ?>
+            </div>
+
+          </div>
+
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper swiper-flex-img">
+
+              <?php while (have_rows('team_slider')) : the_row();
+                $img = get_sub_field('team_img');
+              ?>
+
+                <div class="swiper-slide swiper-img__wrapper">
+                  <div class="swiper-empty__wrap"></div>
+                  <div class="swiper-img-sm element-animation">
+                    <img src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
+                  </div>
+                </div>
+
+              <?php endwhile; ?>
+
+            </div>
+          </div>
+
+          <div class="swiper mySwiper2">
             <div class="swiper-wrapper">
 
               <?php while (have_rows('team_slider')) : the_row();
                 $img = get_sub_field('team_img');
-                $quote = get_sub_field('quote');
-                $member = get_sub_field('team_member');
-                $position = get_sub_field('position');
               ?>
 
                 <div class="swiper-slide">
@@ -147,51 +184,26 @@ get_header();
                     <img src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
                   </div>
 
-
-                  <div class="slider-text">
-                    <h3><?php echo $quote; ?></h3>
-                    <p><?php echo $member; ?></p>
-                    <p><?php echo $position; ?></p>
-                  </div>
-
                 </div>
 
               <?php endwhile; ?>
 
             </div>
 
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
           </div>
-
-
-          <div thumbsSlider="" class="swiper mySwiper">
-            <div class="swiper-wrapper swiper-flex-img">
-
-
-              <?php while (have_rows('team_slider')) : the_row();
-                $img = get_sub_field('team_img');
-              ?>
-
-                <div class="swiper-slide ">
-                  <div class="swiper-img-sm">
-                    <img src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
-                  </div>
-                </div>
-
-              <?php endwhile; ?>
-
-            </div>
-          </div>
-
 
         </div>
 
       <?php endif; ?>
+      <div class="swiper_pagination custom-pagination">
+        <div class="pagination-wrap">
+          <div class="custom-prev-icon"></div>
+          <div class="custom-next-icon"></div>
+        </div>
+      </div>
+    </div>
 
-
-
-
+    <div class="container">
       <div class="team-flex">
         <h3 class="team__title"><?php the_field('team_title'); ?></h3>
         <p class="team__text"><?php the_field('work_text'); ?></p>
@@ -214,9 +226,11 @@ get_header();
         }
         ?>
       </div>
-
     </div>
+
   </section>
+
+
 
   <section class="map">
     <div class="container map-flex">

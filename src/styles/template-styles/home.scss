@@ -404,12 +404,20 @@
 
 .team {
 	position: relative;
-	padding: 4rem 0;
+	padding-bottom: 4rem;
 	border-radius: $page-border-radius;
 	background: $dark-gradient;
 
-	@media screen and (max-width: $big-tablet) {
-		padding: 2.5rem 0;
+	&-container {
+		padding-right: 2.25rem;
+		margin-bottom: 8.75rem;
+		position: relative;
+		@media screen and (max-width: $desktop) {
+			padding-right: 0;
+		}
+		@media screen and (max-width: $big-tablet) {
+			margin-bottom: 5rem;
+		}
 	}
 
 	&-flex {
@@ -515,10 +523,12 @@
 	}
 }
 
-// swiper slider
+// swiper slider general settings
 .swiper {
 	width: 100%;
-	height: 100%;
+	height: 300px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .swiper-slide {
@@ -528,71 +538,83 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-
-.swiper-slide img {
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-.swiper {
-	width: 100%;
-	height: 300px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.swiper-slide {
 	background-size: cover;
 	background-position: center;
 	background-color: transparent;
 }
 
-.mySwiper2 {
-	height: 80%;
-	width: 100%;
-}
-
-.mySwiper {
-	height: 20%;
-	box-sizing: border-box;
-}
-
-.mySwiper .swiper-slide {
-	width: 25%;
-	height: 100%;
-	opacity: 0.4;
-}
-
-.mySwiper .swiper-slide-thumb-active {
-	opacity: 1;
-}
-
 .swiper-slide img {
 	display: block;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
+
 // custom style
 .swiper-flex {
+	position: relative;
 	display: flex;
-	flex-direction: row-reverse;
+	@media screen and (max-width: $desktop) {
+		flex-direction: column-reverse;
+		gap: 7.5rem;
+	}
+
+	&__quotes {
+		position: absolute;
+		top: 28%;
+		left: 22%;
+		color: $main-white;
+		font-size: 5.5rem;
+		font-weight: 700;
+		opacity: 0.46;
+		@media screen and (max-width: $desktop) {
+			top: 36%;
+			left: 3%;
+			font-size: 4rem;
+		}
+		@media screen and (max-width: $tablet) {
+			top: 38%;
+			font-size: 2.875rem;
+		}
+	}
 }
 
-.swiper-flex-img {
-	display: flex;
-	flex-direction: column;
-	gap: 30px;
-}
+// thumbnail slider
+.mySwiper {
+	height: 20%;
+	box-sizing: border-box;
 
-.swiper-img-bg {
-	width: 638px;
-	height: 809px;
-	border-radius: $btn-border-radius;
-	overflow: hidden;
+	& .swiper-slide {
+		height: 100%;
+		opacity: 0.4;
+		filter: grayscale(100%);
+		&:hover,
+		&:focus {
+			filter: none;
+		}
+	}
+
+	& .swiper-flex-img {
+		display: flex;
+		flex-direction: column;
+		gap: 1.875rem;
+		@media screen and (max-width: $desktop) {
+			flex-direction: row;
+			gap: 0;
+			justify-content: space-between;
+		}
+	}
+
+	& .swiper-slide-thumb-active {
+		opacity: 1;
+		filter: none;
+	}
+	& .swiper-empty__wrap {
+		height: 12.5rem;
+		@media screen and (max-width: $desktop) {
+			height: 13.375rem;
+		}
+	}
 }
 
 .swiper-img-sm {
@@ -600,17 +622,225 @@
 	height: 160px;
 	border-radius: $btn-border-radius;
 	overflow: hidden;
+	cursor: pointer;
+	@media screen and (max-width: $desktop) {
+		width: 120px;
+		height: 120px;
+	}
+	@media screen and (max-width: $tablet) {
+		width: 80px;
+		height: 80px;
+	}
+}
+
+.swiper-img__wrapper {
+	& .swiper-img-sm {
+		position: absolute;
+		opacity: 0;
+		transform: translateY(100%);
+
+		&.element-show {
+			opacity: 1;
+			transition: all 2s ease-in-out;
+			transform: translateY(0%);
+		}
+	}
+	&:last-child {
+		@media screen and (max-width: $desktop) {
+			display: none;
+		}
+	}
+	&:nth-child(1) .swiper-img-sm {
+		left: 200px;
+		top: -16px;
+		@media screen and (max-width: $desktop) {
+			left: 10%;
+			top: 40px;
+		}
+		@media screen and (max-width: $tablet) {
+			left: 13px;
+			top: 80px;
+		}
+	}
+	&:nth-child(2) .swiper-img-sm {
+		left: 37px;
+		top: -10px;
+		@media screen and (max-width: $desktop) {
+			left: 10%;
+			top: 80px;
+		}
+		@media screen and (max-width: $tablet) {
+			left: 16px;
+			top: 130px;
+		}
+	}
+	&:nth-child(3) .swiper-img-sm {
+		left: -95px;
+		top: 60px;
+		@media screen and (max-width: $desktop) {
+			left: 10%;
+			top: 0;
+		}
+		@media screen and (max-width: $tablet) {
+			left: 0;
+			top: 30px;
+		}
+	}
+	&:nth-child(4) .swiper-img-sm {
+		position: absolute;
+		left: 150px;
+		top: 40px;
+	}
+}
+
+// big photo slider
+.mySwiper2 {
+	margin-top: 4rem;
+	height: 80%;
+	width: 100%;
+	@media screen and (max-width: $desktop) {
+		margin-left: 20%;
+	}
+	@media screen and (max-width: $big-tablet) {
+		margin-left: 12%;
+	}
+	@media screen and (max-width: $tablet) {
+		margin-top: 2.5rem;
+		margin-left: 8%;
+	}
+}
+
+.swiper-img-bg {
+	width: 683px;
+	height: 809px;
+	border-radius: $btn-border-radius;
+	overflow: hidden;
+	@media screen and (max-width: $desktop) {
+		width: 450px;
+		height: 568px;
+	}
+	@media screen and (max-width: $tablet) {
+		width: 255px;
+		height: 302px;
+	}
+}
+.swiper-img-bg img {
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: cover;
+}
+
+//text slider
+.mySwiper3 {
+	position: absolute;
+	z-index: 2;
+	top: 35%;
+	left: 25%;
+	width: 538px;
+	height: fit-content;
+	color: $main-white;
+	@media screen and (max-width: 1375px) {
+		width: 350px;
+	}
+	@media screen and (max-width: $desktop) {
+		top: 40%;
+		left: 8%;
+	}
+	@media screen and (max-width: $tablet) {
+		top: 42%;
+		left: 10%;
+		width: 262px;
+	}
 }
 
 .slider-text {
-	position: absolute;
-	top: 300px;
-	left: 0;
-	width: 538px;
+	display: block;
 	text-align: left;
-	color: $main-white;
+
+	&__quote {
+		margin-bottom: 1.5rem;
+		font-size: 2.5rem;
+		font-weight: 500;
+		line-height: 1;
+		@media screen and (max-width: 1375px) {
+			font-size: 2rem;
+		}
+		@media screen and (max-width: $desktop) {
+			margin-bottom: 0.75rem;
+			font-size: 1.5rem;
+		}
+		@media screen and (max-width: $tablet) {
+			font-size: 1.25rem;
+		}
+	}
+	&__member {
+		margin-left: 18px;
+		position: relative;
+		font-weight: 500;
+		line-height: 1.4;
+		letter-spacing: -0.32px;
+
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: -18px;
+			content: "";
+			display: block;
+			width: 13px;
+			height: 2px;
+			background-color: $main-white;
+		}
+	}
+	&__position {
+		opacity: 0.5;
+	}
 }
-// swiper slider
+
+//custom pagination
+.custom-pagination {
+	position: absolute;
+	top: 75%;
+	left: 25%;
+	@media screen and (max-width: $desktop) {
+		top: 60%;
+		left: 8%;
+	}
+	@media screen and (max-width: $tablet) {
+		top: 62%;
+		left: 70%;
+	}
+}
+.pagination-wrap {
+	display: flex;
+	gap: 0.5rem;
+	@media screen and (max-width: $tablet) {
+		gap: 1rem;
+	}
+}
+.custom-next-icon,
+.custom-prev-icon {
+	display: none;
+	cursor: pointer;
+	display: block;
+	background: url("../../../assets/images/arrow-left.svg") center center no-repeat;
+	background-size: contain;
+	width: 2rem;
+	height: 2rem;
+	z-index: 10;
+	transition: $transition-function;
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+.custom-next-icon {
+	background: url("../../../assets/images/arrow-right.svg") center center no-repeat;
+	background-size: contain;
+}
+.custom-prev-icon.swiper-button-disabled,
+.custom-next-icon.swiper-button-disabled {
+	opacity: 0.5;
+}
+//swiper slider
 
 .map {
 	padding: 7.5rem 0;
