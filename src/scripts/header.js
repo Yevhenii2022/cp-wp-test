@@ -14,3 +14,13 @@ function closeByBgdClick(e) {
 		document.body.classList.remove("modal-open");
 	}
 }
+
+$(document).ready(function () {
+	$("#toggleButton").click(function () {
+	  $("#container").slideToggle(function () {
+		$("#toggleIcon").text(function () {
+		  return $("#container").is(":visible") ? 'ᐱ' : 'ᐯ';
+		});
+	  });
+	});
+  });

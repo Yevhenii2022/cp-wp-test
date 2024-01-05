@@ -20,14 +20,29 @@
                     }
                     ?>
                 </div>
-                <div class="header__menu" id="">
+                <div class="header__menu">
                     <div class="header__nav">
-                        <div class="header__sertificates">Сертифікати
-                            <a class="header__sertificates-btn" href="" target="_blank" aria-label="read more"><svg class="header__sertificates-icon" width="56px" height="56px">
-                                <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
-                            </svg></a>
-                        </div>
+                       
+                           
                         <div class="header__menu-wrapper">
+                             <div class="header__sertificates" id="toggleButton">
+                            Сертифікати <span id="toggleIcon"> ᐯ </span>
+                             </div>
+                             <div class="header__sertificates-wrapper" id="container">
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                            </div>
                             <?php wp_nav_menu([
                                     'theme_location'       => 'header',
                                     'container'            => false,
@@ -60,6 +75,7 @@
                     <span class="burger__title">Меню</span>
                     <span></span>
                 </div>
+                
             </div>
         </div>
     </header>
