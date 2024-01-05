@@ -47,6 +47,34 @@ get_header();
     </div>
   </section>
 
+  <section class="experience">
+    <div class="container">
+
+      <div class="expectation-wrapper">
+        <img class="expectation__img" src="https://test4.cursorpointer.agency/wp-content/uploads/2024/01/about.webp" alt="conversation at the table">
+        <div>
+          <h2 class="expectation__title"><?php the_field('expectation_title'); ?></h2>
+
+          <?php
+          $expectation_list = get_field('expectation_list');
+          if ($expectation_list) {
+            echo '<ul class="expectation__list">';
+
+            foreach ($expectation_list as $item) {
+              $expectation_item = $item['expectation_item'];
+              if ($expectation_item) {
+                echo '<li class="expectation__item"><p>' . esc_html($expectation_item) . '</p></li>';
+              }
+            }
+            echo '</ul>';
+          }
+          ?>
+
+          <h3 class="expectation__subtitle"><?php the_field('expectation_subtitle'); ?></h3>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 </main>

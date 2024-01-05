@@ -16,7 +16,7 @@ get_header();
       <p class="isobanner__text"><?php the_field('banner_text'); ?></p>
 
       <div class="isobanner-flex">
-        <a href="#form" class="button">
+        <a href="#form" class="button" aria-label="link to form">
           <?php the_field('banner_btn'); ?>
           <svg class="arrow-icon stroke">
             <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
