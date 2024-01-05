@@ -18,9 +18,8 @@ function closeByBgdClick(e) {
 $(document).ready(function () {
 	$("#toggleButton").click(function () {
 	  $("#container").slideToggle(function () {
-		$("#toggleIcon").text(function () {
-		  return $("#container").is(":visible") ? 'ᐱ' : 'ᐯ';
-		});
+		 return $("#container").is(":visible");
+	
 	  });
 	});
   });

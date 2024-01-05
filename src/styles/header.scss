@@ -48,7 +48,7 @@
 			overflow: scroll;
 			width: 100%;
 			top: 0px;
-            position: static;
+            position: fixed;
 			padding: 0 2rem;
             height: 95%;
 			flex: 1;
@@ -59,7 +59,6 @@
 			margin-right: 0px;
 		}
 	}
-
 
 	&__nav{
 		display: flex;
@@ -112,16 +111,30 @@
 		font-weight: 400;
 		line-height: 100%;
 		letter-spacing: 0.025rem;
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			width: 0;
+			height: 0.05rem;
+			background-color: $main-white;
+			transition: width 0.3s ease-in-out;
+		}
+
+			&:hover::before {
+				width: 100%;
+				@media screen and (max-width: $desktop) {
+					width: 0;
+				}
+			}
 	
 			@media screen and (max-width: $desktop) {
 				font-size: 2rem;
 				font-weight: 500;
 				z-index: 100;
 						}
-			&:hover{
-					border-bottom: 0.05rem solid $main-white;
-				}
-	        }
+			}
 	
 	&__phone{
 		letter-spacing: 0.02rem;
@@ -261,20 +274,29 @@
 //Certificates
 #container {
 	display: none;
+	height: fit-content;
 	background: $dark-gradient;
-    padding: 7rem 2rem 2rem 2rem;
+    padding: 7rem 2rem 3rem 2rem;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
-    height: 500px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-	gap: 1.5rem;
-	font-size: 0.875rem;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 100%;
+	    @media screen and (max-width: $desktop){
+			position: static;
+			background: transparent;
+			grid-template-columns: repeat(3, 1fr);
+			padding: 2.5rem 0rem 2rem 0rem;
+	}
+   
+	.header__submenu-links{
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 1.5rem;
+		font-size: 0.875rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+		width: 100%;
 	        @media screen and (max-width: 1200px){
 				grid-template-columns: repeat(4, 1fr);
 			}
@@ -282,13 +304,12 @@
 				position: static;
 			    background: transparent;
 			    grid-template-columns: repeat(3, 1fr);
-				margin-top: 2.5rem;
-				padding: 0;
+				
 			}
 			@media screen and (max-width: $tablet){
 					grid-template-columns: repeat(2, 1fr);
 				}
-		
+	}	
 	&::before {
 		content: "";
 		position: absolute;
@@ -308,23 +329,31 @@
 	cursor: pointer;
 	z-index: 50;
 	margin-right: 1rem;
-
-		&:hover{
-			border-bottom: 0.05rem solid $main-white;
-			transition: transform 0.3s ease;
-	}
+	position: relative;
+	
+	&::before {
+			content: "";
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			width: 0;
+			height: 0.05rem;
+			background-color: $main-white;
+			transition: width 0.3s ease-in-out;
+		}
+			&:hover::before {
+				width: 100%;
+				@media screen and (max-width: $desktop){
+					width: 0;
+				}
+			}
+	
 	@media screen and (max-width: $desktop){
-		border-bottom: none;
 		font-size: 2rem;
         margin: 9rem 0 0 0rem;
-		
+		text-align: start;
 	}
-	@media screen and (max-width: $tablet){
-		border-bottom: none;
-		font-size: 2rem;
-        margin: 5rem 0 0 0rem;
-	}
-  }
+}
   
   #toggleIcon {
 	font-size: 0.5rem;
