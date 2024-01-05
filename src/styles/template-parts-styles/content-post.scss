@@ -20,7 +20,6 @@
 
     &__button{
         top: 29%;
-        left: 1%;
         z-index: 1;
         position: absolute;
         color: #fff;
@@ -29,8 +28,6 @@
         font-weight: 400;
         @media screen and (max-width: $tablet) {
             top: 55%;
-            left: 0%;
-            
         }
     }
 
@@ -55,7 +52,6 @@
         position: absolute;
         top: 41%;
         z-index: 1;
-        left: 2rem;
         max-width: 40rem;
         letter-spacing: 0.1rem;
 
@@ -65,7 +61,7 @@
         }
         @media screen and (max-width: $tablet) {
                 top: 62%;
-                left: 1rem;
+               
         }
     }
 
@@ -78,7 +74,6 @@
     &__data{
         display: flex;
         position: absolute;
-        left: 2rem;
         color: $main-white;
         font-size: 0.875rem;
         font-style: normal;

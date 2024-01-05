@@ -22,26 +22,26 @@
                 </div>
                 <div class="header__menu">
                     <div class="header__nav">
-                       
-                           
                         <div class="header__menu-wrapper">
-                             <div class="header__sertificates" id="toggleButton">
-                            Сертифікати <span id="toggleIcon"> ᐯ </span>
-                             </div>
-                             <div class="header__sertificates-wrapper" id="container">
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
-                                <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                             <button class="header__submenu-button" id="toggleButton">
+                                <?php the_field('submenu_button', 'option'); ?> 
+                                <span id="toggleIcon"> ᐯ </span></button>
+                             
+                             <div class="header__submenu-wrapper" id="container">
+                                <div class="header__submenu-links">
+                                    <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                    <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                    <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                    <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                    <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                    <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                    <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                    <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                    <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                    <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                    <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                    <a href="#">ISO 23932 <br>Система управління інжинірінгу пожежної безпеки</a>
+                                </div>
                             </div>
                             <?php wp_nav_menu([
                                     'theme_location'       => 'header',
@@ -62,13 +62,11 @@
                                <?php endwhile; ?>
                             <?php endif; ?>
                             </ul>
-                           
-                            
-                         </div>
-                          <div class="header__last">
+                        </div>
+                        <div class="header__last">
                                 <?php get_template_part('template-parts/last-part'); ?>
-                            </div>
-                    <a class="header__phone" href="tel:+<?php the_field('header_phone', 'option'); ?>" >
+                        </div>
+                        <a class="header__phone" href="tel:+<?php the_field('header_phone', 'option'); ?>" >
                         <?php the_field('header_phone', 'option'); ?></a>
                 </div>
                 <div class="burger">

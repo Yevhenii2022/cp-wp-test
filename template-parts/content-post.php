@@ -2,16 +2,19 @@
     
             <div class="post-banner">
                 <img class="post-banner__img" src="<?php the_field('banner_img'); ?>" alt="banner image">
-                <a href="<?php echo esc_attr(get_field('post_banner_button_link', 'options') ); ?>" class="post-banner__button button">
-                    <svg class="post-banner__arrow-icon">
-                        <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
-                    </svg><?php the_field('post_banner_button_name', 'options'); ?>
-                </a>
+                <div class="container">
+                     <a href="<?php echo esc_attr(get_field('post_banner_button_link', 'options') ); ?>" class="post-banner__button button">
+                        <svg class="post-banner__arrow-icon">
+                            <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
+                        </svg><?php the_field('post_banner_button_name', 'options'); ?>
+                    </a>
                 <h1 class="post-banner__title"><?php the_title(); ?></h1>
                 <div class="post-banner__data">
                     <p class="post-banner__time"><?php the_time('d.m.Y'); ?></p>
                     <p class="post-banner__autor"><?php the_author(); ?></p>
                 </div>
+                </div>
+               
                
             </div>
             <div class="container">
