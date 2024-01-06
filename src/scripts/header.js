@@ -39,7 +39,7 @@ window.addEventListener('scroll', function () {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     let header = document.querySelector('.header');
 
-    if (scrollTop > lastScrollTop && scrollTop > 60) {
+    if (scrollTop > lastScrollTop) {
 		
 		header.classList.add('hidden');
 	} else {
