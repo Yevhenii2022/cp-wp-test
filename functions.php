@@ -65,6 +65,11 @@ function cp_wp_test_scripts()
     wp_enqueue_script('tooltip-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/tooltip.js', array(), false, true);
   }
 
+  if (is_singular() && locate_template('template-parts/accordion.php')) {
+    wp_enqueue_style('accordion-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/accordion.css', array('main'));
+    wp_enqueue_script('accordion-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/accordion.js', array(), false, true);
+  }
+
   if (is_singular() && locate_template('template-parts/last-part.php')) {
     wp_enqueue_style('last-part-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/last-part.css', array('main'));
   }

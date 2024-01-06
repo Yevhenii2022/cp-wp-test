@@ -1,0 +1,1 @@
+$(document).ready((function(){$(".acc2-body").hide(),$(".toggle-btn2").on("click",(function(){var i=$(this).closest(".acc2-item"),t=i.find(".acc2-body"),c=$(this);t.slideToggle(1e3,(function(){c.text(t.is(":visible")?"-":"+")})),i.siblings().find(".acc2-body").slideUp(1e3),i.siblings().find(".toggle-btn2").text("+")}))}));
