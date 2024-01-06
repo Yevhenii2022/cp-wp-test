@@ -55,7 +55,7 @@ get_header();
         ?>
         <img class="expectation__img" src='<?php echo $img['url']; ?>' alt='<?php echo $img['alt']; ?>' />
         <div>
-          <h2 class="expectation__title"><?php the_field('expectation_title'); ?></h2>
+          <h2 id="expectationTitle" class="expectation__title"><?php the_field('expectation_title'); ?></h2>
 
           <?php
           // Отримуємо ID конкретного запису типу "iso" 
@@ -81,10 +81,7 @@ get_header();
 
   <section class="principles">
     <div class="container">
-
       <div class="principles-wrapper">
-
-
         <div class="principles-wrapper-text">
           <?php
           $img1 = get_field('principles_img1');
@@ -103,11 +100,8 @@ get_header();
           ?>
           <img class="principles__img img4" src='<?php echo $img4['url']; ?>' alt='<?php echo $img['alt']; ?>' />
         </div>
-
         <div class="principles-wrapper-text">
-
-          <h3 class="principles__title"><?php the_field('principles_title'); ?></h3>
-
+          <h3 id="principlesTitle" class="principles__title"><?php the_field('principles_title'); ?></h3>
           <?php
           $principles_list = get_field('principles_list');
           if ($principles_list) {
@@ -128,32 +122,33 @@ get_header();
             echo '</ul>';
           }
           ?>
-
-
         </div>
-
-
-
       </div>
     </div>
   </section>
 
-  <section class="work">
+  <section class="partner">
     <div class="container">
-      <div class="work-wraper">
-        <div class="work-flex">
-          <h2 class="work__title work-color"><?php the_field('work_title_first'); ?></h2>
-          <h2 class="work__title"><?php the_field('work_title_second'); ?></h2>
-        </div>
-        <p class="work__text"><?php the_field('work_text'); ?></p>
+      <div class="partner-wraper">
+        <h3 id="partnerTitle" class="partner__title"><?php the_field('partner_title'); ?></h3>
+        <p class="partner__text"><?php the_field('partner_text'); ?></p>
       </div>
-
-      <?php get_template_part('template-parts/tooltip'); ?>
-
+      <div class="work__line">
+        <?php
+        $circles = get_field('partner_item');
+        foreach ($circles as $index => $circle) {
+        ?>
+          <div class="circles" data-index="<?php echo $index + 1; ?>" style="--index: <?php echo $index + 1; ?>;">
+            <span class="circles-number"><?php echo sprintf('%02d', $index + 1); ?></span>
+            <?php
+            $partner_text = $circle['partner_item_text'];
+            ?>
+            <p class="circles-description"><?php echo esc_html($partner_text); ?></p>
+          </div>
+        <?php } ?>
+      </div>
     </div>
   </section>
-
-
 </main>
 
 <?php get_footer(); ?>
