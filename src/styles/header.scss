@@ -63,7 +63,6 @@
 	   }
     }
 	
-
 	&__submenu-icon{
 		width: 0.6rem;
 		height: 0.6rem;
@@ -137,7 +136,7 @@
 			top: 0px;
             position: fixed;
 			padding: 0 2rem;
-            height: 95%;
+            height: 94%;
 			flex: 1;
 		}
 			
@@ -262,7 +261,7 @@
 			margin-bottom: 4%;
 		}
 		@media screen and (max-width: $tablet) {
-			margin-bottom: 1%;
+			margin-bottom: 3%;
 		}
 	}
 }
@@ -364,5 +363,6 @@
 
 .header.hidden {
     opacity: 0;
+	
 }
 

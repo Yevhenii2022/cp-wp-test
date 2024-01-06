@@ -67,7 +67,6 @@
                                 ?>
                             <ul class="header__document-menu">
                                 <?php if (have_rows('documents', 'option')) : ?>
-
                                    <?php while (have_rows('documents', 'option')) : the_row();?>
                                      <li class="header__document-item">
                                        <a class="header__document-link" href="<?php echo esc_attr(the_sub_field('document_link', 'option') ); ?>"><?php the_sub_field('document_name', 'option'); ?></a>

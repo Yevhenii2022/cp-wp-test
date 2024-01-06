@@ -47,6 +47,9 @@ function cp_wp_test_scripts()
     wp_enqueue_style('contacts-style', get_template_directory_uri() . '/assets/styles/template-styles/contacts.css', array('main'));
     wp_enqueue_script('contacts-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/contacts.js', array(), false, true);
   }
+  if (is_page_template('templates/contacts.php')) {
+    wp_enqueue_style('contacts-style', get_template_directory_uri() . '/assets/styles/template-styles/contacts.css', array('main'));
+  }
 
   if (is_singular() && locate_template('template-parts/content-blog-posts.php')) {
     wp_enqueue_style('content-blog-posts-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/content-blog-posts.css', array('main'));
