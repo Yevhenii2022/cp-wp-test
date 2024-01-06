@@ -15,7 +15,7 @@ get_header();
     <div class="container banner-wrapper">
       <h1 class="banner__title"><?php the_field('banner_title'); ?></h1>
 
-      <a href="#form" class="button">
+      <a href="#form" class="button" aria-label="link to form">
         <?php the_field('banner_btn_text'); ?>
         <svg class="arrow-icon stroke">
           <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
@@ -44,7 +44,7 @@ get_header();
           while ($iso_posts->have_posts()) : $iso_posts->the_post();
         ?>
             <li>
-              <a href="<?php the_permalink(); ?>">
+              <a href="<?php the_permalink(); ?>" aria-label="link to iso card page">
                 <article class="iso__card">
                   <div class="iso__card-wrapper">
                     <?php
@@ -99,7 +99,7 @@ get_header();
         <h2 class="about__title"><?php echo $modified_text; ?></h2>
         <p class="about__text"><?php the_field('about_text_first'); ?></p>
         <p class="about__text"><?php the_field('about_text_second'); ?></p>
-        <a href="<?php echo esc_attr(get_field('about_btn_link')); ?>" class="button  about-margin">
+        <a href="<?php echo esc_attr(get_field('about_btn_link')); ?>" class="button  about-margin" aria-label="link to about company page">
           <?php the_field('about_btn_text'); ?>
           <svg class="arrow-icon stroke">
             <use href="<?php echo get_template_directory_uri() ?>/assets/images/icon-sprite.svg#arrow"></use>
