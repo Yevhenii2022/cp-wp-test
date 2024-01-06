@@ -189,7 +189,7 @@
 
 .expectation {
 	padding: 4rem 0;
-	background-color: $second-white;
+	background-color: $main-white;
 
 	@media screen and (max-width: $big-tablet) {
 		padding: 2.5rem 0;
@@ -291,6 +291,241 @@
 
 		@media screen and (max-width: $big-tablet) {
 			height: 25.375rem;
+		}
+	}
+}
+
+.principles {
+	position: relative;
+	padding: 7.5rem 0 7.5rem 0;
+	height: 680px;
+	background: $dark-gradient;
+	color: $main-white;
+	border-radius: $page-border-radius;
+	overflow: hidden;
+
+	@media screen and (max-width: $big-tablet) {
+		padding: 18.75rem 0 2.5rem 0;
+		height: auto;
+	}
+
+	&-wrapper {
+		display: flex;
+		gap: 1.5rem;
+		justify-content: space-between;
+
+		@media screen and (max-width: 1120px) {
+		}
+
+		@media screen and (max-width: $desktop) {
+			gap: 0;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			flex-direction: column;
+			gap: 3.625rem;
+		}
+	}
+
+	&-wrapper-text {
+		width: 50%;
+
+		@media screen and (max-width: $desktop) {
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			width: 100%;
+		}
+	}
+
+	&__img {
+		border-radius: 0.25rem;
+		overflow: hidden;
+		object-fit: contain;
+	}
+	.img1 {
+		position: absolute;
+		top: -26px;
+		left: 14%;
+		width: 160px;
+		height: 160px;
+
+		@media screen and (max-width: $big-tablet) {
+			width: 101px;
+			height: 101px;
+		}
+	}
+	.img2 {
+		position: absolute;
+		top: 200px;
+		left: -80px;
+		width: 160px;
+		height: 160px;
+
+		@media screen and (max-width: $big-tablet) {
+			display: none;
+		}
+	}
+	.img3 {
+		position: absolute;
+		top: 226px;
+		left: 27%;
+		width: 211px;
+		height: 211px;
+
+		@media screen and (max-width: $big-tablet) {
+			width: 105px;
+			height: 105px;
+		}
+	}
+	.img4 {
+		position: absolute;
+		bottom: 17px;
+		left: 5%;
+		width: 188px;
+		height: 188px;
+
+		@media screen and (max-width: $big-tablet) {
+			width: 98px;
+			height: 98px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 3.5rem;
+		font-size: 2rem;
+		font-weight: 600;
+		line-height: 1;
+
+		@media screen and (max-width: $desktop) {
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			margin-bottom: 1.5rem;
+			font-size: 1.75rem;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+
+		@media screen and (max-width: $desktop) {
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			gap: 1.5rem;
+		}
+	}
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+
+		@media screen and (max-width: $desktop) {
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			flex-direction: column;
+		}
+	}
+
+	&__subtitle {
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 1;
+
+		@media screen and (max-width: $big-tablet) {
+			font-size: 0.875rem;
+			line-height: 1.2;
+			letter-spacing: -0.14px;
+		}
+	}
+
+	&__text {
+		width: 420px;
+		font-size: 1rem;
+		line-height: 1;
+		letter-spacing: -0.16px;
+
+		@media screen and (max-width: $big-tablet) {
+			font-size: 0.875rem;
+			line-height: 1.2;
+			letter-spacing: -0.14px;
+		}
+	}
+}
+
+.work {
+	padding: 4rem 0 8rem 0;
+
+	@media screen and (max-width: $big-tablet) {
+		padding: 2.5rem 0 6.5rem 0;
+	}
+
+	&-wraper {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 13.625rem;
+
+		@media screen and (max-width: $desktop) {
+			gap: 2.5rem;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			margin-bottom: 11.75rem;
+			flex-direction: column;
+			gap: 0;
+		}
+	}
+
+	&-flex {
+		@media screen and (max-width: $big-tablet) {
+			display: flex;
+			gap: 0.33rem;
+		}
+	}
+
+	&-color {
+		color: rgba(103, 107, 112, 0.31);
+	}
+
+	&__title {
+		width: 20.625rem;
+		font-size: 3rem;
+		font-weight: 600;
+		line-height: 1;
+
+		@media screen and (max-width: $big-tablet) {
+			width: fit-content;
+			font-size: 1.75rem;
+		}
+
+		@media screen and (max-width: $mobile) {
+			font-size: 1.4rem;
+		}
+	}
+
+	&__text {
+		margin-right: 5.625rem;
+		width: 29.5rem;
+		font-size: 1rem;
+		line-height: 1.2;
+		letter-spacing: -0.16px;
+
+		@media screen and (max-width: $desktop) {
+			margin-right: 0;
+		}
+
+		@media screen and (max-width: $big-tablet) {
+			margin-top: 1rem;
+			font-size: 0.875rem;
+			letter-spacing: -0.14px;
+		}
+
+		@media screen and (max-width: $tablet) {
+			width: fit-content;
 		}
 	}
 }
