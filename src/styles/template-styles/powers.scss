@@ -1,0 +1,21 @@
+@import "../variables.scss";
+
+.powers {
+	padding: 11.5rem 0 5rem 0;
+	background: $dark-gradient;
+
+	@media screen and (max-width: $big-tablet) {
+		padding: 8.813rem 0 2.5rem 0;
+	}
+
+	&__title {
+		color: $main-white;
+		font-size: 4.5rem;
+		font-weight: 600;
+		line-height: 1;
+
+		@media screen and (max-width: $big-tablet) {
+			font-size: 2.25rem;
+		}
+	}
+}
