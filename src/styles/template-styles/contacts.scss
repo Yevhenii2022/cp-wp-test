@@ -11,9 +11,11 @@
     letter-spacing: 0.025rem;
     border-radius: 0rem 0rem 1.125rem 1.125rem;
     font-variant-numeric: lining-nums tabular-nums;
+    padding-bottom: 3rem;
     
     @media screen and (max-width: $tablet) {
         padding-top: 6.5rem;
+        padding-bottom: 1.5rem;
     }
     
     &__main-title{
@@ -80,13 +82,26 @@
         justify-content: space-between;
         gap: 4%;
         max-width: 42rem;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
         font-size: 0.875rem;
         @media screen and (max-width: $tablet) {
             flex-direction: column;
             margin-top: 1.7rem;
             margin-bottom: 0;
         }
+    }
+
+    &__content-line{
+        height: 0.05rem;
+        background-color: $main-white;
+        opacity: 10%;
+        margin-bottom: 2rem;
+        @media screen and (max-width: $tablet) {
+            width: 138%;
+            margin-left: -2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+            }
     }
 
     &__phone{
@@ -111,12 +126,14 @@
         font-style: normal;
         font-weight: 500;
         line-height: 100%;
+       
+    }
+
+    &__content-title:first-child{
         @media screen and (max-width: $tablet) {
             margin-top: 4rem;
         }
-        
-    }
-
+}
     &__content-email{
         margin-bottom: 1.12rem;
     }
@@ -149,7 +166,7 @@
        position: relative;
         
        @media screen and (max-width: $tablet) {
-       padding: 2rem 0 2rem 0;
+       padding: 2.5rem 0 1.75rem 0;
        margin-bottom: 0;
      }
     }

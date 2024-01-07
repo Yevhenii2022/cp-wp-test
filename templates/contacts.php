@@ -17,7 +17,7 @@ get_header();
                     
                     <div class="contacts__content-body">
                         <div class="contacts__phone">
-                        <div class="contacts__content-email"><?php the_field('first_email'); ?></div>
+                            <div class="contacts__content-email"><?php the_field('first_email'); ?></div>
                             <?php if (have_rows('first_phone')) : ?>
                                 <?php while (have_rows('first_phone')) : the_row();?>
                                     <div class="contacts__field-name"><?php the_sub_field('first_contact_name'); ?></div>
@@ -34,10 +34,11 @@ get_header();
                             <?php endif; ?>
                         </div>
                     </div>
+                    <div class="contacts__content-line"></div>
                     <div class="contacts__content-title"><?php the_field('second_title'); ?></div>
                     <div class="contacts__content-body">
                         <div class="contacts__phone">
-                        <div class="contacts__content-email"><?php the_field('second_email'); ?></div>
+                            <div class="contacts__content-email"><?php the_field('second_email'); ?></div>
                             <?php if (have_rows('second_phone')) : ?>
                                 <?php while (have_rows('second_phone')) : the_row();?>
                                     <div class="contacts__field-name"><?php the_sub_field('second_contact_name'); ?></div>
