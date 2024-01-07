@@ -11,6 +11,7 @@
     letter-spacing: 0.025rem;
     border-radius: 0rem 0rem 1.125rem 1.125rem;
     font-variant-numeric: lining-nums tabular-nums;
+    padding-bottom: 1rem;
     @media screen and (max-width: $tablet) {
         padding-top: 6.5rem;
         padding-bottom: 1.75rem
@@ -30,7 +31,14 @@
     &__form{
         max-width: 34.9375rem;
         width: 40%;
-        height: 14.8125rem;
+        
+        @media screen and (max-width: $desktop) {
+            width: 100%;
+        }
+        @media screen and (max-width: $tablet) {
+            margin-top: 2rem;
+        }
+
     }
 
     &__form h2{
@@ -43,14 +51,14 @@
         margin-top: 5rem;
         width: 100%;
         justify-content: space-between;
-        padding-bottom: 1.31rem;
+        
 
         @media screen and (max-width: $desktop) {
             flex-direction: column;
         }
         @media screen and (max-width: $tablet) {
             margin-top: 0rem;
-            padding-bottom: 0;
+          
       }
     }
 
@@ -59,11 +67,11 @@
         width: 60%;
         @media screen and (max-width: $desktop) {
            width: 100%;
+           margin-top: 6.75rem;
         }
         @media screen and (max-width: $tablet) {
-              margin-top: 5rem;
+            margin-top: 2rem;
         }
-            
     }
 
     &__content-body{
@@ -133,9 +141,18 @@
     }
 
     &__map{
-       background: #F6F9FC;
+        background: #F6F9FC;
+    }
+
+    &__map-flex{
        padding: 7rem 0;
-      
+       position: relative;
+       margin-bottom: 1rem;
+
+       @media screen and (max-width: $tablet) {
+       padding: 2rem 0;
+       margin-bottom: 0;
+     }
     }
 
     &__map h2{
@@ -144,11 +161,18 @@
         font-weight: 500;
         line-height: 100%;
         max-width: 35rem;
-        
-        margin-top: -10%;
+        position: absolute;
+        bottom: 12%;
+        left: 1%;
         letter-spacing: 0.1rem;
+
+        @media screen and (max-width: $big-tablet) {
+             font-size: 1.75rem;
+        }
         @media screen and (max-width: $tablet) {
-           font-size: 1.75rem;
+           position: static;
+           margin-top: 3rem;
+           margin-bottom: 0.75rem;
         }
     }
 

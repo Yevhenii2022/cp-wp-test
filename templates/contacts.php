@@ -59,8 +59,8 @@ get_header();
         </div>
     </section>
     <section class="contacts__map">
-        
-            <div class="container map-flex">
+        <div class="container">
+            <div class="contacts__map-flex">
                 <div class="contacts__map-img">
                     <?php
                     $image = get_field('map');
@@ -70,13 +70,12 @@ get_header();
                     echo wp_get_attachment_image($image, $size, false, array('class' => $custom_class));
                     }
                     ?>
-                     <div>
+                </div>
+                
                     <h2 class="map__title"><?php the_field('text_before'); ?><br><span class="map__title map-span"><?php the_field('map_number'); ?></span><?php the_field('text_after'); ?></h2>
-                </div>
-                </div>
-               
+                
             </div>
-        
+        </div>
         
   </section>
 
