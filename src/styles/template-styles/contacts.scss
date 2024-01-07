@@ -145,12 +145,11 @@
     }
 
     &__map-flex{
-       padding: 7rem 0;
+       padding: 7rem 0 8rem 0;
        position: relative;
-       margin-bottom: 1rem;
-
+        
        @media screen and (max-width: $tablet) {
-       padding: 2rem 0;
+       padding: 2rem 0 2rem 0;
        margin-bottom: 0;
      }
     }
