@@ -2,11 +2,6 @@
 
 #accordion {
 	width: 100%;
-	padding: 3rem 0 5rem 0;
-
-	@media screen and (max-width: $big-tablet) {
-		padding: 0.6875rem 0 2.5rem 0;
-	}
 }
 
 .acc2-item {
@@ -14,7 +9,7 @@
 }
 
 .acc2-head {
-	margin: 2rem 0 1rem 0;
+	margin: 3rem 0 1rem 0;
 	display: inline-block;
 	font-size: 1.5rem;
 	font-weight: 600;
@@ -22,7 +17,7 @@
 
 	@media screen and (max-width: $big-tablet) {
 		width: 95%;
-		margin: 1.8125rem 0 1rem 0;
+		margin: 2.25rem 0 1rem 0;
 		font-size: 1.125rem;
 	}
 }

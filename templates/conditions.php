@@ -1,19 +1,19 @@
 <?php
 /*
-Template Name: powers
+Template Name: conditions
 */
 get_header();
 ?>
 
 <main>
-  <section class="powers">
+  <section class="conditions">
     <div class="container">
-      <h2 class="powers__title"><?php the_title(); ?></h2>
+      <h2 class="conditions__title"><?php the_title(); ?></h2>
     </div>
   </section>
-  <section class="powers__acr">
+  <section class="conditions__acr">
     <div class="container">
-      <div class="powers__text">
+      <div class="conditions__text">
         <?php the_content(); ?>
       </div>
 
