@@ -23,10 +23,10 @@ $(document).ready(() => {
   
 		if (containerVisible) {
 		  // Якщо контейнер видимий, встановити поворот для SVG
-		  arrowIcon.css("transform", "rotate(180deg)");
+		  arrowIcon.css("transform", "rotate(0deg)");
 		} else {
 		  // Якщо контейнер прихований, скинути поворот для SVG
-		  arrowIcon.css("transform", "rotate(0deg)");
+		  arrowIcon.css("transform", "rotate(180deg)");
 		}
 	  });
 	});
