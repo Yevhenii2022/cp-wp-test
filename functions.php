@@ -47,8 +47,13 @@ function cp_wp_test_scripts()
     wp_enqueue_style('contacts-style', get_template_directory_uri() . '/assets/styles/template-styles/contacts.css', array('main'));
     wp_enqueue_script('contacts-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/contacts.js', array(), false, true);
   }
-  if (is_page_template('templates/contacts.php')) {
-    wp_enqueue_style('contacts-style', get_template_directory_uri() . '/assets/styles/template-styles/contacts.css', array('main'));
+
+  if (is_page_template('templates/powers.php')) {
+    wp_enqueue_style('powers-style', get_template_directory_uri() . '/assets/styles/template-styles/powers.css', array('main'));
+  }
+
+  if (is_page_template('templates/conditions.php')) {
+    wp_enqueue_style('conditions-style', get_template_directory_uri() . '/assets/styles/template-styles/conditions.css', array('main'));
   }
 
   if (is_singular() && locate_template('template-parts/content-blog-posts.php')) {
@@ -63,6 +68,11 @@ function cp_wp_test_scripts()
   if (is_singular() && locate_template('template-parts/tooltip.php')) {
     wp_enqueue_style('tooltip-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/tooltip.css', array('main'));
     wp_enqueue_script('tooltip-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/tooltip.js', array(), false, true);
+  }
+
+  if (is_singular() && locate_template('template-parts/accordion.php')) {
+    wp_enqueue_style('accordion-style', get_template_directory_uri() . '/assets/styles/template-parts-styles/accordion.css', array('main'));
+    wp_enqueue_script('accordion-scripts', get_template_directory_uri() . '/assets/scripts/template-scripts/accordion.js', array(), false, true);
   }
 
   if (is_singular() && locate_template('template-parts/last-part.php')) {
