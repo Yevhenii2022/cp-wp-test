@@ -19,6 +19,7 @@
 	justify-content: center;
 	align-items: center;
 	padding: 1rem;
+	padding: 1rem 50px 1rem 1rem;
 	width: fit-content;
 	height: fit-content;
 	cursor: pointer;
@@ -28,7 +29,24 @@
 	line-height: 0.875;
 	text-align: center;
 	border-radius: $btn-border-radius;
-	transition: all $transition-function;
+	overflow: hidden;
+	position: relative;
+
+	.arrow-icon {
+		width: 1rem;
+		height: 1rem;
+		stroke: rgba(103, 107, 112, 0.31);
+		position: absolute;
+		left: 82%;
+		top: 50%;
+		transform: translateY(-50%);
+		transition: all $transition-function;
+
+		@media screen and (max-width: $mobile) {
+			width: 0.875rem;
+			height: 0.875rem;
+		}
+	}
 
 	&:disabled {
 		background-color: $grey15;
@@ -41,6 +59,14 @@
 			transition: stroke $transition-function;
 			stroke: $grey70;
 		}
+
+		.arrow-icon {
+			animation: arrowAnimation 1500ms linear infinite;
+		}
+	}
+
+	.text {
+		z-index: 1;
 	}
 
 	@media screen and (max-width: $mobile) {
@@ -49,16 +75,12 @@
 	}
 }
 
-.arrow-icon {
-	width: 1rem;
-	height: 1rem;
-	margin-left: 1.5rem;
-	stroke: rgba(103, 107, 112, 0.31);
-	transition: all $transition-function;
-
-	@media screen and (max-width: $mobile) {
-		width: 0.875rem;
-		height: 0.875rem;
+@keyframes arrowAnimation {
+	0% {
+		left: 82%;
+	}
+	100% {
+		left: 88%;
 	}
 }
 
