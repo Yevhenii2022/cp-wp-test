@@ -32,7 +32,6 @@
 	@media screen and (max-width: $tablet) {
 		height: 3.4rem;
 	}
-
 }
 
 .contact__input {
@@ -125,6 +124,7 @@
 	padding-right: 3.375rem;
 	margin-bottom: -19px;
 	margin-top: 1.25rem;
+	color: $grey90;
 	background-color: $main-white;
 }
 
