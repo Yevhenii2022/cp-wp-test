@@ -76,6 +76,15 @@ get_header();
           <h3 class="expectation__subtitle"><?php echo esc_html(get_field('expectation_subtitle', $iso_id)); ?></h3>
         </div>
       </div>
+
+
+
+
+      <?php get_template_part('template-parts/accordion'); ?>
+
+
+
+
     </div>
   </section>
 
