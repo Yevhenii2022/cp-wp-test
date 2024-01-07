@@ -42,10 +42,10 @@
                                     if ($iso_posts->have_posts()) :
                                         while ($iso_posts->have_posts()) : $iso_posts->the_post();
                                     ?>
-                                            <li class="class">
+                                            <li class="header__submenu-link">
                                                 <a href="<?php the_permalink(); ?>">
-                                                    <p class="class"><?php the_field('iso_number'); ?></p>
-                                                    <p class="class"><?php the_title(); ?></p>
+                                                    <p class="header__submenu-iso"><?php the_field('iso_number'); ?></p>
+                                                    <p class="header__submenu-text"><?php the_title(); ?></p>
                                                 </a>
                                             </li>
                                     <?php
