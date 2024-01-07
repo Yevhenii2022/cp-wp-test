@@ -68,10 +68,10 @@
 		width: 0.6rem;
 		height: 0.6rem;
 		transition: transform 0.3s ease;
+		transform: rotate(180deg);
 		@media screen and (max-width: $desktop){
 			width: 1rem;
 			height: 1rem;
-			transform: rotate(180deg);
 		}
 
 	}
