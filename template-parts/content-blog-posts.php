@@ -41,8 +41,8 @@ get_header();
                 'format' => 'page/%#%',
                 'current' => $current_page,
                 'total' => $total_pages,
-                'prev_text' => (''),
-                'next_text' => (''),
+                'prev_text' => ('&#8592'),
+                'next_text' => ('&#8594'),
             );
             echo '<div id="pagination" class="pagination">';
             echo paginate_links($pagination_args);

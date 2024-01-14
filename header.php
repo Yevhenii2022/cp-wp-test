@@ -31,30 +31,30 @@
                             </button>
                              
                              <div class="header__submenu-wrapper" id="container">
-                             
-                                <ul class="header__submenu-links">
-                                    <?php
-                                    $args = array(
-                                        'post_type' => 'iso',
-                                        'posts_per_page' => -1,
-                                    );
-                                    $iso_posts = new WP_Query($args);
-                                    if ($iso_posts->have_posts()) :
-                                        while ($iso_posts->have_posts()) : $iso_posts->the_post();
-                                    ?>
-                                            <li class="header__submenu-link">
-                                                <a href="<?php the_permalink(); ?>">
-                                                    <p class="header__submenu-iso"><?php the_field('iso_number'); ?></p>
-                                                    <p class="header__submenu-text"><?php the_title(); ?></p>
-                                                </a>
-                                            </li>
-                                    <?php
-                                        endwhile;
-                                        wp_reset_postdata();
-                                    endif;
-                                    ?>
-                                </ul>
-                                
+                                <div class="container">
+                                    <ul class="header__submenu-links">
+                                        <?php
+                                        $args = array(
+                                            'post_type' => 'iso',
+                                            'posts_per_page' => -1,
+                                        );
+                                        $iso_posts = new WP_Query($args);
+                                        if ($iso_posts->have_posts()) :
+                                            while ($iso_posts->have_posts()) : $iso_posts->the_post();
+                                        ?>
+                                                <li class="header__submenu-link">
+                                                    <a href="<?php the_permalink(); ?>">
+                                                        <p class="header__submenu-iso"><?php the_field('iso_number'); ?></p>
+                                                        <p class="header__submenu-text"><?php the_title(); ?></p>
+                                                    </a>
+                                                </li>
+                                        <?php
+                                            endwhile;
+                                            wp_reset_postdata();
+                                        endif;
+                                        ?>
+                                    </ul>
+                                </div>
                             </div>
                             <?php wp_nav_menu([
                                     'theme_location'       => 'header',
@@ -78,7 +78,7 @@
                         <div class="header__last">
                                 <?php get_template_part('template-parts/last-part'); ?>
                         </div>
-                        <a class="header__phone" href="tel:+<?php the_field('header_phone', 'option'); ?>" >
+                        <a class="header__phone" href="tel:<?php the_field('header_phone', 'option'); ?>" >
                         <?php the_field('header_phone', 'option'); ?></a>
                 </div>
                 <div class="burger">
