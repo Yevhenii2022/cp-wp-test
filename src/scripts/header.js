@@ -46,7 +46,6 @@ window.addEventListener('scroll', function () {
 		
 		header.classList.add('hidden');
 	} else {
-		
 		header.classList.remove('hidden');
 	}
 
@@ -54,7 +53,6 @@ window.addEventListener('scroll', function () {
        
         header.classList.remove('scrolled');
     } else {
-       
         header.classList.add('scrolled');
     }
 
