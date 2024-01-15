@@ -1,5 +1,6 @@
 const menu = document.querySelector(".header__nav");
 const menuButton = document.querySelector(".burger");
+let lastScrollPosition = 0;
 
 menuButton.addEventListener("click", function () {
 	this.classList.toggle("active");
@@ -15,6 +16,8 @@ function closeByBgdClick(e) {
 	}
 }
 
+
+//підменю сертифікати
 $(document).ready(() => {
 	$("#toggleButton").click(() => {
 	  $("#container").slideToggle(() => {
@@ -43,7 +46,6 @@ window.addEventListener('scroll', function () {
 		
 		header.classList.add('hidden');
 	} else {
-		
 		header.classList.remove('hidden');
 	}
 
@@ -51,7 +53,6 @@ window.addEventListener('scroll', function () {
        
         header.classList.remove('scrolled');
     } else {
-       
         header.classList.add('scrolled');
     }
 

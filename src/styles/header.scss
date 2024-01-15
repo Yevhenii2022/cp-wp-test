@@ -3,6 +3,7 @@
     width: 100%;
 	border-bottom: 0.05rem solid rgba(255, 255, 255, 0.40);
     z-index: 100;
+	-webkit-z-index: 100;
 	transition: background-color 0.3s ease, position 0.3s ease;
 	background: transparent;
 	
@@ -26,6 +27,7 @@
 
 	&__logo{
 		z-index: 100;
+		-webkit-z-index: 100;
 	}
 	
 	&__menu{
@@ -36,6 +38,7 @@
 	&__submenu-button{
 		cursor: pointer;
 		z-index: 50;
+		-webkit-z-index: 50;
 		margin-right: 1rem;
 		position: relative;
 	
@@ -85,6 +88,7 @@
 		bottom: 0;
 		left: 0;
 		border-radius: 0rem 0rem 1rem 1rem;
+		width: 100%;
 	    @media screen and (max-width: $desktop){
 			position: static;
 			background: transparent;
@@ -171,7 +175,8 @@
 			z-index: 50;
 			overflow: auto;
 			padding: 0 0;
-			animation: burgerAnimation 0.4s;
+			opacity: 0;
+			transition: opacity 0.5s ease
 		}
 
 		@media screen and (max-width: $tablet) {
@@ -293,6 +298,7 @@
 		flex-direction: column;
 		min-height: 95vh;
 		margin: 0;
+		opacity: 1;
 	}
 }
 
@@ -362,18 +368,16 @@
 	transform: rotate(45deg) translate(0, 50%);
 }
 
-@keyframes burgerAnimation {
-	from{opasity: 0}
-	to {opasity: 1}
-}
-	
 .header.scrolled{
 	position: fixed;
 	background: $dark-gradient;
+	transition: background-color 0.3s ease, opacity 0.3s ease;
+	
 }
 
 .header.hidden {
     opacity: 0;
-	
+	position: absolute;
+	transition: opacity 0.3s ease;
 }
 
